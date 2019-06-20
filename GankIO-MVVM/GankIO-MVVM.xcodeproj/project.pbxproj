@@ -1,0 +1,929 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A14F62C57B1207961647AA2 /* Pods_GankIO_MVVMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F6B81C668EAB59987A78FD /* Pods_GankIO_MVVMTests.framework */; };
+		2A185B920D76CD01042E61CB /* Pods_GankIO_MVVMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2632EC46CA9F52A19D707B /* Pods_GankIO_MVVMUITests.framework */; };
+		4E7D60C922BBBFE7001AE0AD /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60C822BBBFE7001AE0AD /* DependencyContainer.swift */; };
+		4E7D60D622BBC0B3001AE0AD /* Observable+Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60D322BBC0B3001AE0AD /* Observable+Logging.swift */; };
+		4E7D60D722BBC0B3001AE0AD /* Observable+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60D422BBC0B3001AE0AD /* Observable+Operators.swift */; };
+		4E7D60D822BBC0B3001AE0AD /* Kingfisher+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60D522BBC0B3001AE0AD /* Kingfisher+Rx.swift */; };
+		4E7D60DB22BBC0D0001AE0AD /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60D922BBC0D0001AE0AD /* MainController.swift */; };
+		4E7D60DC22BBC0D0001AE0AD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60DA22BBC0D0001AE0AD /* MainViewModel.swift */; };
+		4E7D60DF22BBC0F2001AE0AD /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60DD22BBC0F2001AE0AD /* ApiService.swift */; };
+		4E7D60E022BBC0F2001AE0AD /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60DE22BBC0F2001AE0AD /* ErrorResponse.swift */; };
+		4E7D60E622BBC18E001AE0AD /* ViewModelApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60E222BBC18E001AE0AD /* ViewModelApiService.swift */; };
+		4E7D60E722BBC18E001AE0AD /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60E322BBC18E001AE0AD /* ViewModel.swift */; };
+		4E7D60E822BBC18E001AE0AD /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60E422BBC18E001AE0AD /* ViewModelType.swift */; };
+		4E7D60E922BBC18E001AE0AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60E522BBC18E001AE0AD /* ViewController.swift */; };
+		4E7D60EB22BBC1C5001AE0AD /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60EA22BBC1C5001AE0AD /* LogManager.swift */; };
+		4E7D60EE22BBC27E001AE0AD /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60ED22BBC27E001AE0AD /* ErrorTracker.swift */; };
+		4EDA79D522BBAE99000F33AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDA79D422BBAE99000F33AE /* AppDelegate.swift */; };
+		4EDA79DA22BBAE99000F33AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EDA79D822BBAE99000F33AE /* Main.storyboard */; };
+		4EDA79DC22BBAE9B000F33AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EDA79DB22BBAE9B000F33AE /* Assets.xcassets */; };
+		4EDA79DF22BBAE9B000F33AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EDA79DD22BBAE9B000F33AE /* LaunchScreen.storyboard */; };
+		4EDA79EA22BBAE9B000F33AE /* GankIO_MVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDA79E922BBAE9B000F33AE /* GankIO_MVVMTests.swift */; };
+		4EDA79F522BBAE9B000F33AE /* GankIO_MVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDA79F422BBAE9B000F33AE /* GankIO_MVVMUITests.swift */; };
+		97CA6D0D39DBDAA8211DD9F8 /* Pods_GankIO_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F915A7309C217C99B6C720E0 /* Pods_GankIO_MVVM.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4EDA79E622BBAE9B000F33AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EDA79C922BBAE98000F33AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4EDA79D022BBAE98000F33AE;
+			remoteInfo = "GankIO-MVVM";
+		};
+		4EDA79F122BBAE9B000F33AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4EDA79C922BBAE98000F33AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4EDA79D022BBAE98000F33AE;
+			remoteInfo = "GankIO-MVVM";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2DE0BEFD18EB504847FEE40F /* Pods-GankIO-MVVMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankIO-MVVMUITests.release.xcconfig"; path = "Target Support Files/Pods-GankIO-MVVMUITests/Pods-GankIO-MVVMUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2F2221A38E1E6D13E9BBC2F2 /* Pods-GankIO-MVVMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankIO-MVVMUITests.debug.xcconfig"; path = "Target Support Files/Pods-GankIO-MVVMUITests/Pods-GankIO-MVVMUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4E2632EC46CA9F52A19D707B /* Pods_GankIO_MVVMUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GankIO_MVVMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E7D60C822BBBFE7001AE0AD /* DependencyContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
+		4E7D60D322BBC0B3001AE0AD /* Observable+Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Logging.swift"; sourceTree = "<group>"; };
+		4E7D60D422BBC0B3001AE0AD /* Observable+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Operators.swift"; sourceTree = "<group>"; };
+		4E7D60D522BBC0B3001AE0AD /* Kingfisher+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Kingfisher+Rx.swift"; sourceTree = "<group>"; };
+		4E7D60D922BBC0D0001AE0AD /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		4E7D60DA22BBC0D0001AE0AD /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		4E7D60DD22BBC0F2001AE0AD /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		4E7D60DE22BBC0F2001AE0AD /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		4E7D60E222BBC18E001AE0AD /* ViewModelApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelApiService.swift; sourceTree = "<group>"; };
+		4E7D60E322BBC18E001AE0AD /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		4E7D60E422BBC18E001AE0AD /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
+		4E7D60E522BBC18E001AE0AD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4E7D60EA22BBC1C5001AE0AD /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
+		4E7D60ED22BBC27E001AE0AD /* ErrorTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
+		4EDA79D122BBAE99000F33AE /* GankIO-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GankIO-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EDA79D422BBAE99000F33AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4EDA79D922BBAE99000F33AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4EDA79DB22BBAE9B000F33AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4EDA79DE22BBAE9B000F33AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4EDA79E022BBAE9B000F33AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EDA79E522BBAE9B000F33AE /* GankIO-MVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GankIO-MVVMTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EDA79E922BBAE9B000F33AE /* GankIO_MVVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GankIO_MVVMTests.swift; sourceTree = "<group>"; };
+		4EDA79EB22BBAE9B000F33AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EDA79F022BBAE9B000F33AE /* GankIO-MVVMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GankIO-MVVMUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4EDA79F422BBAE9B000F33AE /* GankIO_MVVMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GankIO_MVVMUITests.swift; sourceTree = "<group>"; };
+		4EDA79F622BBAE9B000F33AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51E47C4EB11A87CAAA76931A /* Pods-GankIO-MVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankIO-MVVM.release.xcconfig"; path = "Target Support Files/Pods-GankIO-MVVM/Pods-GankIO-MVVM.release.xcconfig"; sourceTree = "<group>"; };
+		58F6B81C668EAB59987A78FD /* Pods_GankIO_MVVMTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GankIO_MVVMTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		751ABAB151D90C58993FEB26 /* Pods-GankIO-MVVMTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankIO-MVVMTests.debug.xcconfig"; path = "Target Support Files/Pods-GankIO-MVVMTests/Pods-GankIO-MVVMTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B77DC7CFDCF537F9860EE32F /* Pods-GankIO-MVVMTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankIO-MVVMTests.release.xcconfig"; path = "Target Support Files/Pods-GankIO-MVVMTests/Pods-GankIO-MVVMTests.release.xcconfig"; sourceTree = "<group>"; };
+		F8D5D92FF456D3DD3D20FEBD /* Pods-GankIO-MVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankIO-MVVM.debug.xcconfig"; path = "Target Support Files/Pods-GankIO-MVVM/Pods-GankIO-MVVM.debug.xcconfig"; sourceTree = "<group>"; };
+		F915A7309C217C99B6C720E0 /* Pods_GankIO_MVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GankIO_MVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4EDA79CE22BBAE98000F33AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97CA6D0D39DBDAA8211DD9F8 /* Pods_GankIO_MVVM.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EDA79E222BBAE9B000F33AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A14F62C57B1207961647AA2 /* Pods_GankIO_MVVMTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EDA79ED22BBAE9B000F33AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A185B920D76CD01042E61CB /* Pods_GankIO_MVVMUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		23587D978C433541CE8B7CFE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F8D5D92FF456D3DD3D20FEBD /* Pods-GankIO-MVVM.debug.xcconfig */,
+				51E47C4EB11A87CAAA76931A /* Pods-GankIO-MVVM.release.xcconfig */,
+				751ABAB151D90C58993FEB26 /* Pods-GankIO-MVVMTests.debug.xcconfig */,
+				B77DC7CFDCF537F9860EE32F /* Pods-GankIO-MVVMTests.release.xcconfig */,
+				2F2221A38E1E6D13E9BBC2F2 /* Pods-GankIO-MVVMUITests.debug.xcconfig */,
+				2DE0BEFD18EB504847FEE40F /* Pods-GankIO-MVVMUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4E7D60C722BBBFC3001AE0AD /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				4E7D60C822BBBFE7001AE0AD /* DependencyContainer.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
+		4E7D60CA22BBBFFE001AE0AD /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4E7D60DD22BBC0F2001AE0AD /* ApiService.swift */,
+				4E7D60DE22BBC0F2001AE0AD /* ErrorResponse.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		4E7D60CB22BBC007001AE0AD /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				4E7D60EC22BBC25C001AE0AD /* RxErrorTracker */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		4E7D60CC22BBC013001AE0AD /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4E7D60D122BBC075001AE0AD /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4E7D60CD22BBC025001AE0AD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4E7D60D222BBC090001AE0AD /* RxSwift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4E7D60CE22BBC02C001AE0AD /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4E7D60EA22BBC1C5001AE0AD /* LogManager.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		4E7D60CF22BBC03C001AE0AD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4E7D60D022BBC043001AE0AD /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		4E7D60D122BBC075001AE0AD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4E7D60D922BBC0D0001AE0AD /* MainController.swift */,
+				4E7D60DA22BBC0D0001AE0AD /* MainViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4E7D60D222BBC090001AE0AD /* RxSwift */ = {
+			isa = PBXGroup;
+			children = (
+				4E7D60D522BBC0B3001AE0AD /* Kingfisher+Rx.swift */,
+				4E7D60D322BBC0B3001AE0AD /* Observable+Logging.swift */,
+				4E7D60D422BBC0B3001AE0AD /* Observable+Operators.swift */,
+			);
+			path = RxSwift;
+			sourceTree = "<group>";
+		};
+		4E7D60E122BBC12F001AE0AD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4E7D60E522BBC18E001AE0AD /* ViewController.swift */,
+				4E7D60E322BBC18E001AE0AD /* ViewModel.swift */,
+				4E7D60E222BBC18E001AE0AD /* ViewModelApiService.swift */,
+				4E7D60E422BBC18E001AE0AD /* ViewModelType.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4E7D60EC22BBC25C001AE0AD /* RxErrorTracker */ = {
+			isa = PBXGroup;
+			children = (
+				4E7D60ED22BBC27E001AE0AD /* ErrorTracker.swift */,
+			);
+			path = RxErrorTracker;
+			sourceTree = "<group>";
+		};
+		4EDA79C822BBAE98000F33AE = {
+			isa = PBXGroup;
+			children = (
+				4EDA79D322BBAE99000F33AE /* GankIO-MVVM */,
+				4EDA79E822BBAE9B000F33AE /* GankIO-MVVMTests */,
+				4EDA79F322BBAE9B000F33AE /* GankIO-MVVMUITests */,
+				4EDA79D222BBAE99000F33AE /* Products */,
+				23587D978C433541CE8B7CFE /* Pods */,
+				9421ABB79178F15318A84E49 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4EDA79D222BBAE99000F33AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4EDA79D122BBAE99000F33AE /* GankIO-MVVM.app */,
+				4EDA79E522BBAE9B000F33AE /* GankIO-MVVMTests.xctest */,
+				4EDA79F022BBAE9B000F33AE /* GankIO-MVVMUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4EDA79D322BBAE99000F33AE /* GankIO-MVVM */ = {
+			isa = PBXGroup;
+			children = (
+				4EDA79E022BBAE9B000F33AE /* Info.plist */,
+				4EDA7A1422BBAF3A000F33AE /* Application */,
+				4E7D60E122BBC12F001AE0AD /* Common */,
+				4E7D60D022BBC043001AE0AD /* Configs */,
+				4E7D60C722BBBFC3001AE0AD /* DI */,
+				4E7D60CD22BBC025001AE0AD /* Extensions */,
+				4E7D60CF22BBC03C001AE0AD /* Models */,
+				4E7D60CC22BBC013001AE0AD /* Modules */,
+				4E7D60CA22BBBFFE001AE0AD /* Networking */,
+				4EDA7A1522BBAF4E000F33AE /* Resource */,
+				4E7D60CB22BBC007001AE0AD /* ThirdParty */,
+				4E7D60CE22BBC02C001AE0AD /* Util */,
+			);
+			path = "GankIO-MVVM";
+			sourceTree = "<group>";
+		};
+		4EDA79E822BBAE9B000F33AE /* GankIO-MVVMTests */ = {
+			isa = PBXGroup;
+			children = (
+				4EDA79E922BBAE9B000F33AE /* GankIO_MVVMTests.swift */,
+				4EDA79EB22BBAE9B000F33AE /* Info.plist */,
+			);
+			path = "GankIO-MVVMTests";
+			sourceTree = "<group>";
+		};
+		4EDA79F322BBAE9B000F33AE /* GankIO-MVVMUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4EDA79F422BBAE9B000F33AE /* GankIO_MVVMUITests.swift */,
+				4EDA79F622BBAE9B000F33AE /* Info.plist */,
+			);
+			path = "GankIO-MVVMUITests";
+			sourceTree = "<group>";
+		};
+		4EDA7A1422BBAF3A000F33AE /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4EDA79D422BBAE99000F33AE /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		4EDA7A1522BBAF4E000F33AE /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4EDA79DB22BBAE9B000F33AE /* Assets.xcassets */,
+				4EDA79DD22BBAE9B000F33AE /* LaunchScreen.storyboard */,
+				4EDA79D822BBAE99000F33AE /* Main.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		9421ABB79178F15318A84E49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F915A7309C217C99B6C720E0 /* Pods_GankIO_MVVM.framework */,
+				58F6B81C668EAB59987A78FD /* Pods_GankIO_MVVMTests.framework */,
+				4E2632EC46CA9F52A19D707B /* Pods_GankIO_MVVMUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4EDA79D022BBAE98000F33AE /* GankIO-MVVM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EDA79F922BBAE9B000F33AE /* Build configuration list for PBXNativeTarget "GankIO-MVVM" */;
+			buildPhases = (
+				173AF111BFC9DB10377613A4 /* [CP] Check Pods Manifest.lock */,
+				4EDA79CD22BBAE98000F33AE /* Sources */,
+				4EDA79CE22BBAE98000F33AE /* Frameworks */,
+				4EDA79CF22BBAE98000F33AE /* Resources */,
+				57F783B4DB5EDEE96010FAC3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GankIO-MVVM";
+			productName = "GankIO-MVVM";
+			productReference = 4EDA79D122BBAE99000F33AE /* GankIO-MVVM.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4EDA79E422BBAE9B000F33AE /* GankIO-MVVMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EDA79FC22BBAE9B000F33AE /* Build configuration list for PBXNativeTarget "GankIO-MVVMTests" */;
+			buildPhases = (
+				B7D10CA2920D1215EA81FCA3 /* [CP] Check Pods Manifest.lock */,
+				4EDA79E122BBAE9B000F33AE /* Sources */,
+				4EDA79E222BBAE9B000F33AE /* Frameworks */,
+				4EDA79E322BBAE9B000F33AE /* Resources */,
+				CC29DA9B62D566524B990002 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4EDA79E722BBAE9B000F33AE /* PBXTargetDependency */,
+			);
+			name = "GankIO-MVVMTests";
+			productName = "GankIO-MVVMTests";
+			productReference = 4EDA79E522BBAE9B000F33AE /* GankIO-MVVMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4EDA79EF22BBAE9B000F33AE /* GankIO-MVVMUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4EDA79FF22BBAE9B000F33AE /* Build configuration list for PBXNativeTarget "GankIO-MVVMUITests" */;
+			buildPhases = (
+				D86BA9A0BA5A255289FF735A /* [CP] Check Pods Manifest.lock */,
+				4EDA79EC22BBAE9B000F33AE /* Sources */,
+				4EDA79ED22BBAE9B000F33AE /* Frameworks */,
+				4EDA79EE22BBAE9B000F33AE /* Resources */,
+				7FC3012B182BC1D91DE2A44F /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4EDA79F222BBAE9B000F33AE /* PBXTargetDependency */,
+			);
+			name = "GankIO-MVVMUITests";
+			productName = "GankIO-MVVMUITests";
+			productReference = 4EDA79F022BBAE9B000F33AE /* GankIO-MVVMUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4EDA79C922BBAE98000F33AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = james.li;
+				TargetAttributes = {
+					4EDA79D022BBAE98000F33AE = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					4EDA79E422BBAE9B000F33AE = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 4EDA79D022BBAE98000F33AE;
+					};
+					4EDA79EF22BBAE9B000F33AE = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 4EDA79D022BBAE98000F33AE;
+					};
+				};
+			};
+			buildConfigurationList = 4EDA79CC22BBAE98000F33AE /* Build configuration list for PBXProject "GankIO-MVVM" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4EDA79C822BBAE98000F33AE;
+			productRefGroup = 4EDA79D222BBAE99000F33AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4EDA79D022BBAE98000F33AE /* GankIO-MVVM */,
+				4EDA79E422BBAE9B000F33AE /* GankIO-MVVMTests */,
+				4EDA79EF22BBAE9B000F33AE /* GankIO-MVVMUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4EDA79CF22BBAE98000F33AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EDA79DF22BBAE9B000F33AE /* LaunchScreen.storyboard in Resources */,
+				4EDA79DC22BBAE9B000F33AE /* Assets.xcassets in Resources */,
+				4EDA79DA22BBAE99000F33AE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EDA79E322BBAE9B000F33AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EDA79EE22BBAE9B000F33AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		173AF111BFC9DB10377613A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GankIO-MVVM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		57F783B4DB5EDEE96010FAC3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GankIO-MVVM/Pods-GankIO-MVVM-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GankIO-MVVM/Pods-GankIO-MVVM-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GankIO-MVVM/Pods-GankIO-MVVM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FC3012B182BC1D91DE2A44F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GankIO-MVVMUITests/Pods-GankIO-MVVMUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GankIO-MVVMUITests/Pods-GankIO-MVVMUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GankIO-MVVMUITests/Pods-GankIO-MVVMUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B7D10CA2920D1215EA81FCA3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GankIO-MVVMTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC29DA9B62D566524B990002 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GankIO-MVVMTests/Pods-GankIO-MVVMTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GankIO-MVVMTests/Pods-GankIO-MVVMTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GankIO-MVVMTests/Pods-GankIO-MVVMTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D86BA9A0BA5A255289FF735A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GankIO-MVVMUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4EDA79CD22BBAE98000F33AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E7D60DC22BBC0D0001AE0AD /* MainViewModel.swift in Sources */,
+				4E7D60D722BBC0B3001AE0AD /* Observable+Operators.swift in Sources */,
+				4E7D60D622BBC0B3001AE0AD /* Observable+Logging.swift in Sources */,
+				4E7D60E722BBC18E001AE0AD /* ViewModel.swift in Sources */,
+				4E7D60EE22BBC27E001AE0AD /* ErrorTracker.swift in Sources */,
+				4E7D60C922BBBFE7001AE0AD /* DependencyContainer.swift in Sources */,
+				4E7D60D822BBC0B3001AE0AD /* Kingfisher+Rx.swift in Sources */,
+				4E7D60DB22BBC0D0001AE0AD /* MainController.swift in Sources */,
+				4E7D60E022BBC0F2001AE0AD /* ErrorResponse.swift in Sources */,
+				4E7D60E922BBC18E001AE0AD /* ViewController.swift in Sources */,
+				4E7D60E822BBC18E001AE0AD /* ViewModelType.swift in Sources */,
+				4E7D60EB22BBC1C5001AE0AD /* LogManager.swift in Sources */,
+				4E7D60E622BBC18E001AE0AD /* ViewModelApiService.swift in Sources */,
+				4E7D60DF22BBC0F2001AE0AD /* ApiService.swift in Sources */,
+				4EDA79D522BBAE99000F33AE /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EDA79E122BBAE9B000F33AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EDA79EA22BBAE9B000F33AE /* GankIO_MVVMTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4EDA79EC22BBAE9B000F33AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4EDA79F522BBAE9B000F33AE /* GankIO_MVVMUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4EDA79E722BBAE9B000F33AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4EDA79D022BBAE98000F33AE /* GankIO-MVVM */;
+			targetProxy = 4EDA79E622BBAE9B000F33AE /* PBXContainerItemProxy */;
+		};
+		4EDA79F222BBAE9B000F33AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4EDA79D022BBAE98000F33AE /* GankIO-MVVM */;
+			targetProxy = 4EDA79F122BBAE9B000F33AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4EDA79D822BBAE99000F33AE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4EDA79D922BBAE99000F33AE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4EDA79DD22BBAE9B000F33AE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4EDA79DE22BBAE9B000F33AE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4EDA79F722BBAE9B000F33AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4EDA79F822BBAE9B000F33AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4EDA79FA22BBAE9B000F33AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8D5D92FF456D3DD3D20FEBD /* Pods-GankIO-MVVM.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M9BR556FWG;
+				INFOPLIST_FILE = "GankIO-MVVM/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.geekdroid.gankio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4EDA79FB22BBAE9B000F33AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51E47C4EB11A87CAAA76931A /* Pods-GankIO-MVVM.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M9BR556FWG;
+				INFOPLIST_FILE = "GankIO-MVVM/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.geekdroid.gankio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4EDA79FD22BBAE9B000F33AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 751ABAB151D90C58993FEB26 /* Pods-GankIO-MVVMTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M9BR556FWG;
+				INFOPLIST_FILE = "GankIO-MVVMTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.geekdroid.gankio.GankIO-MVVMTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GankIO-MVVM.app/GankIO-MVVM";
+			};
+			name = Debug;
+		};
+		4EDA79FE22BBAE9B000F33AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B77DC7CFDCF537F9860EE32F /* Pods-GankIO-MVVMTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M9BR556FWG;
+				INFOPLIST_FILE = "GankIO-MVVMTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.geekdroid.gankio.GankIO-MVVMTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GankIO-MVVM.app/GankIO-MVVM";
+			};
+			name = Release;
+		};
+		4EDA7A0022BBAE9B000F33AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F2221A38E1E6D13E9BBC2F2 /* Pods-GankIO-MVVMUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M9BR556FWG;
+				INFOPLIST_FILE = "GankIO-MVVMUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.geekdroid.gankio.GankIO-MVVMUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "GankIO-MVVM";
+			};
+			name = Debug;
+		};
+		4EDA7A0122BBAE9B000F33AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DE0BEFD18EB504847FEE40F /* Pods-GankIO-MVVMUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = M9BR556FWG;
+				INFOPLIST_FILE = "GankIO-MVVMUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.geekdroid.gankio.GankIO-MVVMUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "GankIO-MVVM";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4EDA79CC22BBAE98000F33AE /* Build configuration list for PBXProject "GankIO-MVVM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EDA79F722BBAE9B000F33AE /* Debug */,
+				4EDA79F822BBAE9B000F33AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EDA79F922BBAE9B000F33AE /* Build configuration list for PBXNativeTarget "GankIO-MVVM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EDA79FA22BBAE9B000F33AE /* Debug */,
+				4EDA79FB22BBAE9B000F33AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EDA79FC22BBAE9B000F33AE /* Build configuration list for PBXNativeTarget "GankIO-MVVMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EDA79FD22BBAE9B000F33AE /* Debug */,
+				4EDA79FE22BBAE9B000F33AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4EDA79FF22BBAE9B000F33AE /* Build configuration list for PBXNativeTarget "GankIO-MVVMUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4EDA7A0022BBAE9B000F33AE /* Debug */,
+				4EDA7A0122BBAE9B000F33AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4EDA79C922BBAE98000F33AE /* Project object */;
+}
