@@ -1,0 +1,6 @@
+framework module Pods_GankIO_MVVMUITests {
+  umbrella header "Pods-GankIO-MVVMUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

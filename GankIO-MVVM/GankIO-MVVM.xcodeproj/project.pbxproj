@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		1A14F62C57B1207961647AA2 /* Pods_GankIO_MVVMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F6B81C668EAB59987A78FD /* Pods_GankIO_MVVMTests.framework */; };
 		2A185B920D76CD01042E61CB /* Pods_GankIO_MVVMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2632EC46CA9F52A19D707B /* Pods_GankIO_MVVMUITests.framework */; };
+		4E20A41E22BCFEC4007AA9C1 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E20A41822BCFEC4007AA9C1 /* BaseResponse.swift */; };
+		4E20A41F22BCFEC4007AA9C1 /* OneDayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E20A41922BCFEC4007AA9C1 /* OneDayModel.swift */; };
+		4E20A42022BCFEC4007AA9C1 /* ReadingCatetoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E20A41A22BCFEC4007AA9C1 /* ReadingCatetoryModel.swift */; };
+		4E20A42122BCFEC4007AA9C1 /* ReadingFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E20A41B22BCFEC4007AA9C1 /* ReadingFeedModel.swift */; };
+		4E20A42222BCFEC4007AA9C1 /* GankIOAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E20A41C22BCFEC4007AA9C1 /* GankIOAPIProvider.swift */; };
+		4E20A42322BCFEC4007AA9C1 /* ReadingSubCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E20A41D22BCFEC4007AA9C1 /* ReadingSubCategoryModel.swift */; };
 		4E7D60C922BBBFE7001AE0AD /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60C822BBBFE7001AE0AD /* DependencyContainer.swift */; };
 		4E7D60D622BBC0B3001AE0AD /* Observable+Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60D322BBC0B3001AE0AD /* Observable+Logging.swift */; };
 		4E7D60D722BBC0B3001AE0AD /* Observable+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60D422BBC0B3001AE0AD /* Observable+Operators.swift */; };
@@ -52,6 +58,12 @@
 /* Begin PBXFileReference section */
 		2DE0BEFD18EB504847FEE40F /* Pods-GankIO-MVVMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankIO-MVVMUITests.release.xcconfig"; path = "Target Support Files/Pods-GankIO-MVVMUITests/Pods-GankIO-MVVMUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2F2221A38E1E6D13E9BBC2F2 /* Pods-GankIO-MVVMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankIO-MVVMUITests.debug.xcconfig"; path = "Target Support Files/Pods-GankIO-MVVMUITests/Pods-GankIO-MVVMUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4E20A41822BCFEC4007AA9C1 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		4E20A41922BCFEC4007AA9C1 /* OneDayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneDayModel.swift; sourceTree = "<group>"; };
+		4E20A41A22BCFEC4007AA9C1 /* ReadingCatetoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingCatetoryModel.swift; sourceTree = "<group>"; };
+		4E20A41B22BCFEC4007AA9C1 /* ReadingFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingFeedModel.swift; sourceTree = "<group>"; };
+		4E20A41C22BCFEC4007AA9C1 /* GankIOAPIProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GankIOAPIProvider.swift; sourceTree = "<group>"; };
+		4E20A41D22BCFEC4007AA9C1 /* ReadingSubCategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingSubCategoryModel.swift; sourceTree = "<group>"; };
 		4E2632EC46CA9F52A19D707B /* Pods_GankIO_MVVMUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GankIO_MVVMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E7D60C822BBBFE7001AE0AD /* DependencyContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		4E7D60D322BBC0B3001AE0AD /* Observable+Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Logging.swift"; sourceTree = "<group>"; };
@@ -139,6 +151,7 @@
 		4E7D60CA22BBBFFE001AE0AD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				4E20A41C22BCFEC4007AA9C1 /* GankIOAPIProvider.swift */,
 				4E7D60DD22BBC0F2001AE0AD /* ApiService.swift */,
 				4E7D60DE22BBC0F2001AE0AD /* ErrorResponse.swift */,
 			);
@@ -180,6 +193,11 @@
 		4E7D60CF22BBC03C001AE0AD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				4E20A41822BCFEC4007AA9C1 /* BaseResponse.swift */,
+				4E20A41922BCFEC4007AA9C1 /* OneDayModel.swift */,
+				4E20A41A22BCFEC4007AA9C1 /* ReadingCatetoryModel.swift */,
+				4E20A41B22BCFEC4007AA9C1 /* ReadingFeedModel.swift */,
+				4E20A41D22BCFEC4007AA9C1 /* ReadingSubCategoryModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -574,19 +592,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E7D60DC22BBC0D0001AE0AD /* MainViewModel.swift in Sources */,
+				4E20A41F22BCFEC4007AA9C1 /* OneDayModel.swift in Sources */,
 				4E7D60D722BBC0B3001AE0AD /* Observable+Operators.swift in Sources */,
 				4E7D60D622BBC0B3001AE0AD /* Observable+Logging.swift in Sources */,
 				4E7D60E722BBC18E001AE0AD /* ViewModel.swift in Sources */,
 				4E7D60EE22BBC27E001AE0AD /* ErrorTracker.swift in Sources */,
 				4E7D60C922BBBFE7001AE0AD /* DependencyContainer.swift in Sources */,
 				4E7D60D822BBC0B3001AE0AD /* Kingfisher+Rx.swift in Sources */,
+				4E20A42122BCFEC4007AA9C1 /* ReadingFeedModel.swift in Sources */,
+				4E20A41E22BCFEC4007AA9C1 /* BaseResponse.swift in Sources */,
 				4E7D60DB22BBC0D0001AE0AD /* MainController.swift in Sources */,
 				4E7D60E022BBC0F2001AE0AD /* ErrorResponse.swift in Sources */,
 				4E7D60E922BBC18E001AE0AD /* ViewController.swift in Sources */,
 				4E7D60E822BBC18E001AE0AD /* ViewModelType.swift in Sources */,
 				4E7D60EB22BBC1C5001AE0AD /* LogManager.swift in Sources */,
 				4E7D60E622BBC18E001AE0AD /* ViewModelApiService.swift in Sources */,
+				4E20A42222BCFEC4007AA9C1 /* GankIOAPIProvider.swift in Sources */,
+				4E20A42022BCFEC4007AA9C1 /* ReadingCatetoryModel.swift in Sources */,
 				4E7D60DF22BBC0F2001AE0AD /* ApiService.swift in Sources */,
+				4E20A42322BCFEC4007AA9C1 /* ReadingSubCategoryModel.swift in Sources */,
 				4EDA79D522BBAE99000F33AE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

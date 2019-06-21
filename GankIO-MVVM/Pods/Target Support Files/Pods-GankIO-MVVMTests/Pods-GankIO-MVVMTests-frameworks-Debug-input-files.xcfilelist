@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-GankIO-MVVMTests/Pods-GankIO-MVVMTests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
+${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework
