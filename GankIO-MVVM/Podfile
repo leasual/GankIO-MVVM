@@ -58,6 +58,11 @@ target 'GankIO-MVVM' do
   # Database
   #pod 'RxRealm'
   #pod 'RealmSwift'
+  
+  # UI
+  pod 'CBFlashyTabBarController'
+  pod 'QMUIKit'
+  pod 'Cards'
 
   # Pods for GankIO-MVVM
   target 'GankIO-MVVMTests' do

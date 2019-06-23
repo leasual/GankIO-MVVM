@@ -24,6 +24,7 @@ class ViewController<T: ViewModelType>: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setStatusBarBackgroundColor(color: .white)
         initialize()
         initBindings()
     }
@@ -46,6 +47,22 @@ class ViewController<T: ViewModelType>: UIViewController {
     // MARK binding viewModel
     open func initBindings() {
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        //设置导航栏
+        self.navigationController?.navigationBar.barTintColor = .white
+        self.navigationController?.navigationBar.tintColor = themeColor
+    }
+    
+    //状态栏文字颜色
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .default
+    }
+    
+    func setStatusBarBackgroundColor(color: UIColor) {
+        guard let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else { return }
+        statusBar.backgroundColor = color
     }
     
 }

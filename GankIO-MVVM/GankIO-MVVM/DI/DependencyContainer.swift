@@ -17,11 +17,21 @@ struct DependencyContainer {
     fileprivate static func getContainer() -> Container {
         let container = Container()
         
-        // MARK: MainController
-        container.register(MainViewModel.self) { _ in MainViewModel() }
-        container.register(MainController.self) { resolver in
-            MainController(viewModel: resolver.resolve(MainViewModel.self)!)
-            
+        // MARK: TodayController
+        container.register(APIService.self) { _ in APIService(gankIOAPIProvider: GankIOProvider) }
+        container.register(TodayViewModel.self) { resolver in
+            TodayViewModel(apiService: resolver.resolve(APIService.self)!)
+        }
+        container.register(TodayController.self) { resolver in
+            TodayController(viewModel: resolver.resolve(TodayViewModel.self)!)
+        }
+        // MARK: TodayDetailController
+        container.register(APIService.self) { _ in APIService(gankIOAPIProvider: GankIOProvider) }
+        container.register(TodayDetailViewModel.self) { resolver in
+            TodayDetailViewModel(apiService: resolver.resolve(APIService.self)!)
+        }
+        container.register(TodayDetailController.self) { resolver in
+            TodayDetailController(viewModel: resolver.resolve(TodayDetailViewModel.self)!)
         }
         
         return container

@@ -13,8 +13,14 @@ import NSObject_Rx //it must import this that can found out disposeBag
 import ObjectMapper
 
 class ViewModel: NSObject {
-   
+    let apiService: APIService!
+    
     var page = 1
+    
+    init(apiService: APIService) {
+        self.apiService = apiService
+    }
+    
     
     deinit {
         logDebug("\(type(of: self)): Deinited")

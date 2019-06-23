@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  GankIO-MVVM
+
+  Created by james.li on 2019/6/22.
+  Copyright © 2019 james.li. All rights reserved.
+*/
+
+// MARK: - Global
+
+"cancel" = "Cancel";
+"close" = "Close";
+
+// MARK: - Tabbar title
+"today" = "今天";
+"welfare" = "福利";
+"tech" = "技术";
+"reading" = "闲读";
+
+// MARK: - Today
+"front" = "前端";
+"welfare" = "福利";
+"app" = "App";
+"android" = "Android";
+"ios" = "iOS";
+"recommend" = "瞎推荐";
+"video" = "休息视频";
+"outreachSource" = "拓展资源";

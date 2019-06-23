@@ -9,22 +9,36 @@
 import Foundation
 import ObjectMapper
 
-class TodayModel: Mappable {
+struct OneDayModel: Mappable {
+    var code: Bool?
+    var data: OneDayModelData?
+    var category: [String]?
     
-    var android: [FeedModel]?
-    var iOS: [FeedModel]?
-    var app: [FeedModel]?
-    var video: [FeedModel]?
-    var front: [FeedModel]?
-    var outreachResource: [FeedModel]?
-    var recommend: [FeedModel]?
-    var welfare: [FeedModel]?
+    init?(map: Map) {}
+    init() {}
     
-    required init?(map: Map) {
-        
+    mutating func mapping(map: Map) {
+        code <- map["error"]
+        data <- map["results"]
+        category <- map["category"]
     }
+}
+
+struct OneDayModelData: Mappable {
+
+    var android: [CommonFeedModel]?
+    var iOS: [CommonFeedModel]?
+    var app: [CommonFeedModel]?
+    var video: [CommonFeedModel]?
+    var front: [CommonFeedModel]?
+    var outreachResource: [CommonFeedModel]?
+    var recommend: [CommonFeedModel]?
+    var welfare: [CommonFeedModel]?
     
-    func mapping(map: Map) {
+    init?(map: Map) {}
+    init() {}
+    
+    mutating func mapping(map: Map) {
         android <- map["Android"]
         iOS <- map["iOS"]
         app <- map["App"]
@@ -36,8 +50,10 @@ class TodayModel: Mappable {
     }
 }
 
-class FeedModel: Mappable {
-    var publishAt: String?
+struct CommonFeedModel: Mappable {
+    var _id: String?
+    var createdAt: String?
+    var publishedAt: String?
     var url: String?
     var who: String?
     var used: Bool?
@@ -46,19 +62,20 @@ class FeedModel: Mappable {
     var desc: String?
     var images: [String]?
     
-    required init?(map: Map) {
-        
-    }
+    init?(map: Map) {}
+    init() {}
     
-    func mapping(map: Map) {
-        publishAt <- map["publishAt"]
+    mutating func mapping(map: Map) {
+        _id <- map["_id"]
+        createdAt <- map["createdAt"]
+        publishedAt <- map["publishedAt"]
         url <- map["url"]
         who <- map["who"]
         used <- map["used"]
         type <- map["type"]
         source <- map["source"]
         desc <- map["desc"]
-        images <- map["image"]
+        images <- map["images"]
         
     }
 }

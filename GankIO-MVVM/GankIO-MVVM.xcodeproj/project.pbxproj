@@ -9,30 +9,45 @@
 /* Begin PBXBuildFile section */
 		1A14F62C57B1207961647AA2 /* Pods_GankIO_MVVMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F6B81C668EAB59987A78FD /* Pods_GankIO_MVVMTests.framework */; };
 		2A185B920D76CD01042E61CB /* Pods_GankIO_MVVMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2632EC46CA9F52A19D707B /* Pods_GankIO_MVVMUITests.framework */; };
-		4E20A41E22BCFEC4007AA9C1 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E20A41822BCFEC4007AA9C1 /* BaseResponse.swift */; };
+		4E17B02122BE344E0086B2C5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E17B02322BE344E0086B2C5 /* Localizable.strings */; };
+		4E17B02622BE35360086B2C5 /* Localizeble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B02522BE35360086B2C5 /* Localizeble.swift */; };
+		4E17B02922BE35820086B2C5 /* LocalizableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B02822BE35820086B2C5 /* LocalizableDelegate.swift */; };
+		4E17B02B22BE4B8A0086B2C5 /* TodayHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B02A22BE4B8A0086B2C5 /* TodayHeaderCell.swift */; };
+		4E17B02D22BE4C2D0086B2C5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B02C22BE4C2D0086B2C5 /* TableViewCell.swift */; };
+		4E17B02F22BE4F160086B2C5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B02E22BE4F160086B2C5 /* Constants.swift */; };
+		4E17B03122BE51620086B2C5 /* TodayItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B03022BE51620086B2C5 /* TodayItemCell.swift */; };
+		4E17B03722BE5F040086B2C5 /* SectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B03622BE5F040086B2C5 /* SectionType.swift */; };
+		4E17B03922BE8D470086B2C5 /* UINavigationBar+Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B03822BE8D470086B2C5 /* UINavigationBar+Sugar.swift */; };
+		4E17B03F22BF1E970086B2C5 /* GKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B03E22BF1E970086B2C5 /* GKNavigationController.swift */; };
+		4E17B04122BF2B910086B2C5 /* MultiSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B04022BF2B910086B2C5 /* MultiSectionItem.swift */; };
+		4E17B04322BF52FB0086B2C5 /* TodayCardItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B04222BF52FB0086B2C5 /* TodayCardItemCell.swift */; };
+		4E17B04622BF7C710086B2C5 /* TodayDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B04522BF7C710086B2C5 /* TodayDetailController.swift */; };
+		4E17B04822BF7CAC0086B2C5 /* TodayDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B04722BF7CAC0086B2C5 /* TodayDetailViewModel.swift */; };
 		4E20A41F22BCFEC4007AA9C1 /* OneDayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E20A41922BCFEC4007AA9C1 /* OneDayModel.swift */; };
 		4E20A42022BCFEC4007AA9C1 /* ReadingCatetoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E20A41A22BCFEC4007AA9C1 /* ReadingCatetoryModel.swift */; };
 		4E20A42122BCFEC4007AA9C1 /* ReadingFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E20A41B22BCFEC4007AA9C1 /* ReadingFeedModel.swift */; };
-		4E20A42222BCFEC4007AA9C1 /* GankIOAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E20A41C22BCFEC4007AA9C1 /* GankIOAPIProvider.swift */; };
+		4E20A42222BCFEC4007AA9C1 /* GankIOProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E20A41C22BCFEC4007AA9C1 /* GankIOProvider.swift */; };
 		4E20A42322BCFEC4007AA9C1 /* ReadingSubCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E20A41D22BCFEC4007AA9C1 /* ReadingSubCategoryModel.swift */; };
 		4E7D60C922BBBFE7001AE0AD /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60C822BBBFE7001AE0AD /* DependencyContainer.swift */; };
 		4E7D60D622BBC0B3001AE0AD /* Observable+Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60D322BBC0B3001AE0AD /* Observable+Logging.swift */; };
 		4E7D60D722BBC0B3001AE0AD /* Observable+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60D422BBC0B3001AE0AD /* Observable+Operators.swift */; };
 		4E7D60D822BBC0B3001AE0AD /* Kingfisher+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60D522BBC0B3001AE0AD /* Kingfisher+Rx.swift */; };
-		4E7D60DB22BBC0D0001AE0AD /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60D922BBC0D0001AE0AD /* MainController.swift */; };
-		4E7D60DC22BBC0D0001AE0AD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60DA22BBC0D0001AE0AD /* MainViewModel.swift */; };
-		4E7D60DF22BBC0F2001AE0AD /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60DD22BBC0F2001AE0AD /* ApiService.swift */; };
+		4E7D60DB22BBC0D0001AE0AD /* TodayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60D922BBC0D0001AE0AD /* TodayController.swift */; };
+		4E7D60DC22BBC0D0001AE0AD /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60DA22BBC0D0001AE0AD /* TodayViewModel.swift */; };
+		4E7D60DF22BBC0F2001AE0AD /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60DD22BBC0F2001AE0AD /* APIService.swift */; };
 		4E7D60E022BBC0F2001AE0AD /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60DE22BBC0F2001AE0AD /* ErrorResponse.swift */; };
-		4E7D60E622BBC18E001AE0AD /* ViewModelApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60E222BBC18E001AE0AD /* ViewModelApiService.swift */; };
 		4E7D60E722BBC18E001AE0AD /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60E322BBC18E001AE0AD /* ViewModel.swift */; };
 		4E7D60E822BBC18E001AE0AD /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60E422BBC18E001AE0AD /* ViewModelType.swift */; };
 		4E7D60E922BBC18E001AE0AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60E522BBC18E001AE0AD /* ViewController.swift */; };
 		4E7D60EB22BBC1C5001AE0AD /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60EA22BBC1C5001AE0AD /* LogManager.swift */; };
 		4E7D60EE22BBC27E001AE0AD /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60ED22BBC27E001AE0AD /* ErrorTracker.swift */; };
+		4ECD12A322BD20CD00714583 /* LibConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD12A222BD20CD00714583 /* LibConfigs.swift */; };
+		4ECD12A522BDCC0600714583 /* MoyaErrorPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD12A422BDCC0600714583 /* MoyaErrorPlugin.swift */; };
+		4ECD12B222BE230500714583 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ECD12B122BE230500714583 /* R.generated.swift */; };
+		4ECD12C322BE268C00714583 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ECD12C122BE268C00714583 /* Main.storyboard */; };
+		4ECD12C422BE268C00714583 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ECD12C222BE268C00714583 /* LaunchScreen.storyboard */; };
+		4ECD12D222BE274700714583 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ECD12D122BE274700714583 /* Assets.xcassets */; };
 		4EDA79D522BBAE99000F33AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDA79D422BBAE99000F33AE /* AppDelegate.swift */; };
-		4EDA79DA22BBAE99000F33AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EDA79D822BBAE99000F33AE /* Main.storyboard */; };
-		4EDA79DC22BBAE9B000F33AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EDA79DB22BBAE9B000F33AE /* Assets.xcassets */; };
-		4EDA79DF22BBAE9B000F33AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EDA79DD22BBAE9B000F33AE /* LaunchScreen.storyboard */; };
 		4EDA79EA22BBAE9B000F33AE /* GankIO_MVVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDA79E922BBAE9B000F33AE /* GankIO_MVVMTests.swift */; };
 		4EDA79F522BBAE9B000F33AE /* GankIO_MVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDA79F422BBAE9B000F33AE /* GankIO_MVVMUITests.swift */; };
 		97CA6D0D39DBDAA8211DD9F8 /* Pods_GankIO_MVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F915A7309C217C99B6C720E0 /* Pods_GankIO_MVVM.framework */; };
@@ -58,32 +73,48 @@
 /* Begin PBXFileReference section */
 		2DE0BEFD18EB504847FEE40F /* Pods-GankIO-MVVMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankIO-MVVMUITests.release.xcconfig"; path = "Target Support Files/Pods-GankIO-MVVMUITests/Pods-GankIO-MVVMUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2F2221A38E1E6D13E9BBC2F2 /* Pods-GankIO-MVVMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankIO-MVVMUITests.debug.xcconfig"; path = "Target Support Files/Pods-GankIO-MVVMUITests/Pods-GankIO-MVVMUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		4E20A41822BCFEC4007AA9C1 /* BaseResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseResponse.swift; sourceTree = "<group>"; };
+		4E17B02222BE344E0086B2C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4E17B02422BE34550086B2C5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		4E17B02522BE35360086B2C5 /* Localizeble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Localizeble.swift; path = "GankIO-MVVM/Configs/Localizeble/Localizeble.swift"; sourceTree = SOURCE_ROOT; };
+		4E17B02822BE35820086B2C5 /* LocalizableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableDelegate.swift; sourceTree = "<group>"; };
+		4E17B02A22BE4B8A0086B2C5 /* TodayHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayHeaderCell.swift; sourceTree = "<group>"; };
+		4E17B02C22BE4C2D0086B2C5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		4E17B02E22BE4F160086B2C5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4E17B03022BE51620086B2C5 /* TodayItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItemCell.swift; sourceTree = "<group>"; };
+		4E17B03622BE5F040086B2C5 /* SectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionType.swift; sourceTree = "<group>"; };
+		4E17B03822BE8D470086B2C5 /* UINavigationBar+Sugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Sugar.swift"; sourceTree = "<group>"; };
+		4E17B03E22BF1E970086B2C5 /* GKNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GKNavigationController.swift; sourceTree = "<group>"; };
+		4E17B04022BF2B910086B2C5 /* MultiSectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSectionItem.swift; sourceTree = "<group>"; };
+		4E17B04222BF52FB0086B2C5 /* TodayCardItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCardItemCell.swift; sourceTree = "<group>"; };
+		4E17B04522BF7C710086B2C5 /* TodayDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailController.swift; sourceTree = "<group>"; };
+		4E17B04722BF7CAC0086B2C5 /* TodayDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewModel.swift; sourceTree = "<group>"; };
 		4E20A41922BCFEC4007AA9C1 /* OneDayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneDayModel.swift; sourceTree = "<group>"; };
 		4E20A41A22BCFEC4007AA9C1 /* ReadingCatetoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingCatetoryModel.swift; sourceTree = "<group>"; };
 		4E20A41B22BCFEC4007AA9C1 /* ReadingFeedModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingFeedModel.swift; sourceTree = "<group>"; };
-		4E20A41C22BCFEC4007AA9C1 /* GankIOAPIProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GankIOAPIProvider.swift; sourceTree = "<group>"; };
+		4E20A41C22BCFEC4007AA9C1 /* GankIOProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GankIOProvider.swift; sourceTree = "<group>"; };
 		4E20A41D22BCFEC4007AA9C1 /* ReadingSubCategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingSubCategoryModel.swift; sourceTree = "<group>"; };
 		4E2632EC46CA9F52A19D707B /* Pods_GankIO_MVVMUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GankIO_MVVMUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E7D60C822BBBFE7001AE0AD /* DependencyContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		4E7D60D322BBC0B3001AE0AD /* Observable+Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Logging.swift"; sourceTree = "<group>"; };
 		4E7D60D422BBC0B3001AE0AD /* Observable+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Operators.swift"; sourceTree = "<group>"; };
 		4E7D60D522BBC0B3001AE0AD /* Kingfisher+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Kingfisher+Rx.swift"; sourceTree = "<group>"; };
-		4E7D60D922BBC0D0001AE0AD /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
-		4E7D60DA22BBC0D0001AE0AD /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		4E7D60DD22BBC0F2001AE0AD /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		4E7D60D922BBC0D0001AE0AD /* TodayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayController.swift; sourceTree = "<group>"; };
+		4E7D60DA22BBC0D0001AE0AD /* TodayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
+		4E7D60DD22BBC0F2001AE0AD /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		4E7D60DE22BBC0F2001AE0AD /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
-		4E7D60E222BBC18E001AE0AD /* ViewModelApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelApiService.swift; sourceTree = "<group>"; };
 		4E7D60E322BBC18E001AE0AD /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		4E7D60E422BBC18E001AE0AD /* ViewModelType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		4E7D60E522BBC18E001AE0AD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4E7D60EA22BBC1C5001AE0AD /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		4E7D60ED22BBC27E001AE0AD /* ErrorTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
+		4ECD12A222BD20CD00714583 /* LibConfigs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LibConfigs.swift; path = "GankIO-MVVM/Models/LibConfigs.swift"; sourceTree = SOURCE_ROOT; };
+		4ECD12A422BDCC0600714583 /* MoyaErrorPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaErrorPlugin.swift; sourceTree = "<group>"; };
+		4ECD12B122BE230500714583 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		4ECD12C122BE268C00714583 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4ECD12C222BE268C00714583 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4ECD12D122BE274700714583 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EDA79D122BBAE99000F33AE /* GankIO-MVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GankIO-MVVM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EDA79D422BBAE99000F33AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4EDA79D922BBAE99000F33AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4EDA79DB22BBAE9B000F33AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4EDA79DE22BBAE9B000F33AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4EDA79E022BBAE9B000F33AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EDA79E522BBAE9B000F33AE /* GankIO-MVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "GankIO-MVVMTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EDA79E922BBAE9B000F33AE /* GankIO_MVVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GankIO_MVVMTests.swift; sourceTree = "<group>"; };
@@ -140,6 +171,37 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		4E17B02722BE356E0086B2C5 /* Localizeble */ = {
+			isa = PBXGroup;
+			children = (
+				4E17B02522BE35360086B2C5 /* Localizeble.swift */,
+				4E17B02822BE35820086B2C5 /* LocalizableDelegate.swift */,
+			);
+			path = Localizeble;
+			sourceTree = "<group>";
+		};
+		4E17B03D22BF1E770086B2C5 /* QMUI */ = {
+			isa = PBXGroup;
+			children = (
+				4E17B03E22BF1E970086B2C5 /* GKNavigationController.swift */,
+			);
+			path = QMUI;
+			sourceTree = "<group>";
+		};
+		4E17B04422BF7C4C0086B2C5 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				4E7D60D922BBC0D0001AE0AD /* TodayController.swift */,
+				4E7D60DA22BBC0D0001AE0AD /* TodayViewModel.swift */,
+				4E17B02A22BE4B8A0086B2C5 /* TodayHeaderCell.swift */,
+				4E17B03022BE51620086B2C5 /* TodayItemCell.swift */,
+				4E17B04222BF52FB0086B2C5 /* TodayCardItemCell.swift */,
+				4E17B04522BF7C710086B2C5 /* TodayDetailController.swift */,
+				4E17B04722BF7CAC0086B2C5 /* TodayDetailViewModel.swift */,
+			);
+			path = Today;
+			sourceTree = "<group>";
+		};
 		4E7D60C722BBBFC3001AE0AD /* DI */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,9 +213,10 @@
 		4E7D60CA22BBBFFE001AE0AD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				4E20A41C22BCFEC4007AA9C1 /* GankIOAPIProvider.swift */,
-				4E7D60DD22BBC0F2001AE0AD /* ApiService.swift */,
+				4E20A41C22BCFEC4007AA9C1 /* GankIOProvider.swift */,
+				4E7D60DD22BBC0F2001AE0AD /* APIService.swift */,
 				4E7D60DE22BBC0F2001AE0AD /* ErrorResponse.swift */,
+				4ECD12A422BDCC0600714583 /* MoyaErrorPlugin.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -186,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				4E7D60EA22BBC1C5001AE0AD /* LogManager.swift */,
+				4E17B03822BE8D470086B2C5 /* UINavigationBar+Sugar.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -193,7 +257,6 @@
 		4E7D60CF22BBC03C001AE0AD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				4E20A41822BCFEC4007AA9C1 /* BaseResponse.swift */,
 				4E20A41922BCFEC4007AA9C1 /* OneDayModel.swift */,
 				4E20A41A22BCFEC4007AA9C1 /* ReadingCatetoryModel.swift */,
 				4E20A41B22BCFEC4007AA9C1 /* ReadingFeedModel.swift */,
@@ -205,6 +268,9 @@
 		4E7D60D022BBC043001AE0AD /* Configs */ = {
 			isa = PBXGroup;
 			children = (
+				4E17B02722BE356E0086B2C5 /* Localizeble */,
+				4ECD12A222BD20CD00714583 /* LibConfigs.swift */,
+				4E17B02E22BE4F160086B2C5 /* Constants.swift */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -212,8 +278,7 @@
 		4E7D60D122BBC075001AE0AD /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				4E7D60D922BBC0D0001AE0AD /* MainController.swift */,
-				4E7D60DA22BBC0D0001AE0AD /* MainViewModel.swift */,
+				4E17B04422BF7C4C0086B2C5 /* Today */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -231,10 +296,13 @@
 		4E7D60E122BBC12F001AE0AD /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4E17B03D22BF1E770086B2C5 /* QMUI */,
 				4E7D60E522BBC18E001AE0AD /* ViewController.swift */,
 				4E7D60E322BBC18E001AE0AD /* ViewModel.swift */,
-				4E7D60E222BBC18E001AE0AD /* ViewModelApiService.swift */,
 				4E7D60E422BBC18E001AE0AD /* ViewModelType.swift */,
+				4E17B02C22BE4C2D0086B2C5 /* TableViewCell.swift */,
+				4E17B03622BE5F040086B2C5 /* SectionType.swift */,
+				4E17B04022BF2B910086B2C5 /* MultiSectionItem.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -245,6 +313,26 @@
 				4E7D60ED22BBC27E001AE0AD /* ErrorTracker.swift */,
 			);
 			path = RxErrorTracker;
+			sourceTree = "<group>";
+		};
+		4ECD12AC22BE226A00714583 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4ECD12D122BE274700714583 /* Assets.xcassets */,
+				4ECD12B322BE25FB00714583 /* Base.Iproj */,
+				4ECD12B122BE230500714583 /* R.generated.swift */,
+				4E17B02322BE344E0086B2C5 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4ECD12B322BE25FB00714583 /* Base.Iproj */ = {
+			isa = PBXGroup;
+			children = (
+				4ECD12C222BE268C00714583 /* LaunchScreen.storyboard */,
+				4ECD12C122BE268C00714583 /* Main.storyboard */,
+			);
+			path = Base.Iproj;
 			sourceTree = "<group>";
 		};
 		4EDA79C822BBAE98000F33AE = {
@@ -272,16 +360,16 @@
 		4EDA79D322BBAE99000F33AE /* GankIO-MVVM */ = {
 			isa = PBXGroup;
 			children = (
-				4EDA79E022BBAE9B000F33AE /* Info.plist */,
 				4EDA7A1422BBAF3A000F33AE /* Application */,
 				4E7D60E122BBC12F001AE0AD /* Common */,
 				4E7D60D022BBC043001AE0AD /* Configs */,
 				4E7D60C722BBBFC3001AE0AD /* DI */,
 				4E7D60CD22BBC025001AE0AD /* Extensions */,
+				4EDA79E022BBAE9B000F33AE /* Info.plist */,
 				4E7D60CF22BBC03C001AE0AD /* Models */,
 				4E7D60CC22BBC013001AE0AD /* Modules */,
 				4E7D60CA22BBBFFE001AE0AD /* Networking */,
-				4EDA7A1522BBAF4E000F33AE /* Resource */,
+				4ECD12AC22BE226A00714583 /* Resources */,
 				4E7D60CB22BBC007001AE0AD /* ThirdParty */,
 				4E7D60CE22BBC02C001AE0AD /* Util */,
 			);
@@ -314,16 +402,6 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		4EDA7A1522BBAF4E000F33AE /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				4EDA79DB22BBAE9B000F33AE /* Assets.xcassets */,
-				4EDA79DD22BBAE9B000F33AE /* LaunchScreen.storyboard */,
-				4EDA79D822BBAE99000F33AE /* Main.storyboard */,
-			);
-			path = Resource;
-			sourceTree = "<group>";
-		};
 		9421ABB79178F15318A84E49 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +420,7 @@
 			buildConfigurationList = 4EDA79F922BBAE9B000F33AE /* Build configuration list for PBXNativeTarget "GankIO-MVVM" */;
 			buildPhases = (
 				173AF111BFC9DB10377613A4 /* [CP] Check Pods Manifest.lock */,
+				4ECD12A922BE1F2200714583 /* R.swift */,
 				4EDA79CD22BBAE98000F33AE /* Sources */,
 				4EDA79CE22BBAE98000F33AE /* Frameworks */,
 				4EDA79CF22BBAE98000F33AE /* Resources */,
@@ -426,6 +505,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				"en-AU",
 			);
 			mainGroup = 4EDA79C822BBAE98000F33AE;
 			productRefGroup = 4EDA79D222BBAE99000F33AE /* Products */;
@@ -444,9 +525,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EDA79DF22BBAE9B000F33AE /* LaunchScreen.storyboard in Resources */,
-				4EDA79DC22BBAE9B000F33AE /* Assets.xcassets in Resources */,
-				4EDA79DA22BBAE99000F33AE /* Main.storyboard in Resources */,
+				4ECD12C322BE268C00714583 /* Main.storyboard in Resources */,
+				4E17B02122BE344E0086B2C5 /* Localizable.strings in Resources */,
+				4ECD12D222BE274700714583 /* Assets.xcassets in Resources */,
+				4ECD12C422BE268C00714583 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,6 +570,26 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		4ECD12A922BE1F2200714583 /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$SRCROOT/GankIO-MVVM/Resources/R.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/GankIO-MVVM/Resources/R.generated.swift\"\n";
 		};
 		57F783B4DB5EDEE96010FAC3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -591,27 +693,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E7D60DC22BBC0D0001AE0AD /* MainViewModel.swift in Sources */,
+				4E7D60DC22BBC0D0001AE0AD /* TodayViewModel.swift in Sources */,
 				4E20A41F22BCFEC4007AA9C1 /* OneDayModel.swift in Sources */,
+				4E17B03722BE5F040086B2C5 /* SectionType.swift in Sources */,
+				4E17B02622BE35360086B2C5 /* Localizeble.swift in Sources */,
+				4E17B04622BF7C710086B2C5 /* TodayDetailController.swift in Sources */,
+				4E17B04822BF7CAC0086B2C5 /* TodayDetailViewModel.swift in Sources */,
 				4E7D60D722BBC0B3001AE0AD /* Observable+Operators.swift in Sources */,
 				4E7D60D622BBC0B3001AE0AD /* Observable+Logging.swift in Sources */,
+				4E17B04322BF52FB0086B2C5 /* TodayCardItemCell.swift in Sources */,
 				4E7D60E722BBC18E001AE0AD /* ViewModel.swift in Sources */,
+				4ECD12A522BDCC0600714583 /* MoyaErrorPlugin.swift in Sources */,
 				4E7D60EE22BBC27E001AE0AD /* ErrorTracker.swift in Sources */,
+				4E17B03922BE8D470086B2C5 /* UINavigationBar+Sugar.swift in Sources */,
 				4E7D60C922BBBFE7001AE0AD /* DependencyContainer.swift in Sources */,
 				4E7D60D822BBC0B3001AE0AD /* Kingfisher+Rx.swift in Sources */,
 				4E20A42122BCFEC4007AA9C1 /* ReadingFeedModel.swift in Sources */,
-				4E20A41E22BCFEC4007AA9C1 /* BaseResponse.swift in Sources */,
-				4E7D60DB22BBC0D0001AE0AD /* MainController.swift in Sources */,
+				4E17B02F22BE4F160086B2C5 /* Constants.swift in Sources */,
+				4E7D60DB22BBC0D0001AE0AD /* TodayController.swift in Sources */,
+				4E17B02D22BE4C2D0086B2C5 /* TableViewCell.swift in Sources */,
 				4E7D60E022BBC0F2001AE0AD /* ErrorResponse.swift in Sources */,
+				4E17B02922BE35820086B2C5 /* LocalizableDelegate.swift in Sources */,
+				4ECD12B222BE230500714583 /* R.generated.swift in Sources */,
 				4E7D60E922BBC18E001AE0AD /* ViewController.swift in Sources */,
 				4E7D60E822BBC18E001AE0AD /* ViewModelType.swift in Sources */,
 				4E7D60EB22BBC1C5001AE0AD /* LogManager.swift in Sources */,
-				4E7D60E622BBC18E001AE0AD /* ViewModelApiService.swift in Sources */,
-				4E20A42222BCFEC4007AA9C1 /* GankIOAPIProvider.swift in Sources */,
+				4E17B04122BF2B910086B2C5 /* MultiSectionItem.swift in Sources */,
+				4E20A42222BCFEC4007AA9C1 /* GankIOProvider.swift in Sources */,
+				4ECD12A322BD20CD00714583 /* LibConfigs.swift in Sources */,
 				4E20A42022BCFEC4007AA9C1 /* ReadingCatetoryModel.swift in Sources */,
-				4E7D60DF22BBC0F2001AE0AD /* ApiService.swift in Sources */,
+				4E17B02B22BE4B8A0086B2C5 /* TodayHeaderCell.swift in Sources */,
+				4E7D60DF22BBC0F2001AE0AD /* APIService.swift in Sources */,
 				4E20A42322BCFEC4007AA9C1 /* ReadingSubCategoryModel.swift in Sources */,
+				4E17B03F22BF1E970086B2C5 /* GKNavigationController.swift in Sources */,
 				4EDA79D522BBAE99000F33AE /* AppDelegate.swift in Sources */,
+				4E17B03122BE51620086B2C5 /* TodayItemCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,20 +763,13 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4EDA79D822BBAE99000F33AE /* Main.storyboard */ = {
+		4E17B02322BE344E0086B2C5 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				4EDA79D922BBAE99000F33AE /* Base */,
+				4E17B02222BE344E0086B2C5 /* en */,
+				4E17B02422BE34550086B2C5 /* zh-Hans */,
 			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4EDA79DD22BBAE9B000F33AE /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4EDA79DE22BBAE9B000F33AE /* Base */,
-			);
-			name = LaunchScreen.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
