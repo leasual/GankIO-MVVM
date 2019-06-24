@@ -3,6 +3,7 @@ PODS:
   - Cards (1.4.0):
     - Player (= 0.13.0)
   - CBFlashyTabBarController (0.8.3)
+  - CHTCollectionViewWaterfallLayout/Swift (0.9.7)
   - CocoaLumberjack/Core (3.5.3)
   - CocoaLumberjack/Swift (3.5.3):
     - CocoaLumberjack/Core
@@ -338,6 +339,7 @@ PODS:
 DEPENDENCIES:
   - Cards
   - CBFlashyTabBarController
+  - CHTCollectionViewWaterfallLayout/Swift
   - CocoaLumberjack/Swift
   - DateToolsSwift
   - IQKeyboardManagerSwift
@@ -368,6 +370,7 @@ SPEC REPOS:
     - Alamofire
     - Cards
     - CBFlashyTabBarController
+    - CHTCollectionViewWaterfallLayout
     - CocoaLumberjack
     - DateToolsSwift
     - Differentiator
@@ -410,6 +413,7 @@ SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Cards: 45ae6bd0eca7b5e8016d3b6cb30b60b04753f68f
   CBFlashyTabBarController: bc6b11dd4cbc9b54785c8944156e2f4d4f03b088
+  CHTCollectionViewWaterfallLayout: 9d11068fafecac106695bb5a5d6d0f738483b598
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
   DateToolsSwift: 875d97ff9e3a5d54abdd67a269b3f51c757b71ab
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
@@ -440,6 +444,6 @@ SPEC CHECKSUMS:
   Swinject: b624462f47b635a64f89a60a247baa5fccec14e1
   Then: 0157115e883545c77967b452fe74a1d25fb796e1
 
-PODFILE CHECKSUM: a279b88cf2b145d2c43e31f7a59b02d3526364e0
+PODFILE CHECKSUM: 498f7c49b3bc576e14585cd9ff252f3d23ec2208
 
 COCOAPODS: 1.7.2

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1A14F62C57B1207961647AA2 /* Pods_GankIO_MVVMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F6B81C668EAB59987A78FD /* Pods_GankIO_MVVMTests.framework */; };
+		1A7ABDCA22C0AFD60017AA5F /* WelfareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7ABDC922C0AFD60017AA5F /* WelfareController.swift */; };
+		1A7ABDCC22C0AFE70017AA5F /* WelfareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7ABDCB22C0AFE70017AA5F /* WelfareViewModel.swift */; };
+		1A7ABDCE22C0B2F10017AA5F /* WelfareItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7ABDCD22C0B2F10017AA5F /* WelfareItemCell.swift */; };
+		1A7ABDD022C0B33B0017AA5F /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7ABDCF22C0B33B0017AA5F /* CollectionViewCell.swift */; };
+		1A7ABDD222C0C2AD0017AA5F /* CategoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7ABDD122C0C2AD0017AA5F /* CategoryDataModel.swift */; };
 		2A185B920D76CD01042E61CB /* Pods_GankIO_MVVMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2632EC46CA9F52A19D707B /* Pods_GankIO_MVVMUITests.framework */; };
 		4E17B02122BE344E0086B2C5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E17B02322BE344E0086B2C5 /* Localizable.strings */; };
 		4E17B02622BE35360086B2C5 /* Localizeble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B02522BE35360086B2C5 /* Localizeble.swift */; };
@@ -71,6 +76,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A7ABDC922C0AFD60017AA5F /* WelfareController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelfareController.swift; sourceTree = "<group>"; };
+		1A7ABDCB22C0AFE70017AA5F /* WelfareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelfareViewModel.swift; sourceTree = "<group>"; };
+		1A7ABDCD22C0B2F10017AA5F /* WelfareItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelfareItemCell.swift; sourceTree = "<group>"; };
+		1A7ABDCF22C0B33B0017AA5F /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		1A7ABDD122C0C2AD0017AA5F /* CategoryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataModel.swift; sourceTree = "<group>"; };
 		2DE0BEFD18EB504847FEE40F /* Pods-GankIO-MVVMUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankIO-MVVMUITests.release.xcconfig"; path = "Target Support Files/Pods-GankIO-MVVMUITests/Pods-GankIO-MVVMUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2F2221A38E1E6D13E9BBC2F2 /* Pods-GankIO-MVVMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankIO-MVVMUITests.debug.xcconfig"; path = "Target Support Files/Pods-GankIO-MVVMUITests/Pods-GankIO-MVVMUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4E17B02222BE344E0086B2C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -158,6 +168,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A7ABDC822C0AFBE0017AA5F /* Welfare */ = {
+			isa = PBXGroup;
+			children = (
+				1A7ABDC922C0AFD60017AA5F /* WelfareController.swift */,
+				1A7ABDCB22C0AFE70017AA5F /* WelfareViewModel.swift */,
+				1A7ABDCD22C0B2F10017AA5F /* WelfareItemCell.swift */,
+			);
+			path = Welfare;
+			sourceTree = "<group>";
+		};
 		23587D978C433541CE8B7CFE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +281,7 @@
 				4E20A41A22BCFEC4007AA9C1 /* ReadingCatetoryModel.swift */,
 				4E20A41B22BCFEC4007AA9C1 /* ReadingFeedModel.swift */,
 				4E20A41D22BCFEC4007AA9C1 /* ReadingSubCategoryModel.swift */,
+				1A7ABDD122C0C2AD0017AA5F /* CategoryDataModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -278,6 +299,7 @@
 		4E7D60D122BBC075001AE0AD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1A7ABDC822C0AFBE0017AA5F /* Welfare */,
 				4E17B04422BF7C4C0086B2C5 /* Today */,
 			);
 			path = Home;
@@ -303,6 +325,7 @@
 				4E17B02C22BE4C2D0086B2C5 /* TableViewCell.swift */,
 				4E17B03622BE5F040086B2C5 /* SectionType.swift */,
 				4E17B04022BF2B910086B2C5 /* MultiSectionItem.swift */,
+				1A7ABDCF22C0B33B0017AA5F /* CollectionViewCell.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -699,7 +722,9 @@
 				4E17B02622BE35360086B2C5 /* Localizeble.swift in Sources */,
 				4E17B04622BF7C710086B2C5 /* TodayDetailController.swift in Sources */,
 				4E17B04822BF7CAC0086B2C5 /* TodayDetailViewModel.swift in Sources */,
+				1A7ABDCE22C0B2F10017AA5F /* WelfareItemCell.swift in Sources */,
 				4E7D60D722BBC0B3001AE0AD /* Observable+Operators.swift in Sources */,
+				1A7ABDD022C0B33B0017AA5F /* CollectionViewCell.swift in Sources */,
 				4E7D60D622BBC0B3001AE0AD /* Observable+Logging.swift in Sources */,
 				4E17B04322BF52FB0086B2C5 /* TodayCardItemCell.swift in Sources */,
 				4E7D60E722BBC18E001AE0AD /* ViewModel.swift in Sources */,
@@ -710,6 +735,7 @@
 				4E7D60D822BBC0B3001AE0AD /* Kingfisher+Rx.swift in Sources */,
 				4E20A42122BCFEC4007AA9C1 /* ReadingFeedModel.swift in Sources */,
 				4E17B02F22BE4F160086B2C5 /* Constants.swift in Sources */,
+				1A7ABDD222C0C2AD0017AA5F /* CategoryDataModel.swift in Sources */,
 				4E7D60DB22BBC0D0001AE0AD /* TodayController.swift in Sources */,
 				4E17B02D22BE4C2D0086B2C5 /* TableViewCell.swift in Sources */,
 				4E7D60E022BBC0F2001AE0AD /* ErrorResponse.swift in Sources */,
@@ -719,12 +745,14 @@
 				4E7D60E822BBC18E001AE0AD /* ViewModelType.swift in Sources */,
 				4E7D60EB22BBC1C5001AE0AD /* LogManager.swift in Sources */,
 				4E17B04122BF2B910086B2C5 /* MultiSectionItem.swift in Sources */,
+				1A7ABDCC22C0AFE70017AA5F /* WelfareViewModel.swift in Sources */,
 				4E20A42222BCFEC4007AA9C1 /* GankIOProvider.swift in Sources */,
 				4ECD12A322BD20CD00714583 /* LibConfigs.swift in Sources */,
 				4E20A42022BCFEC4007AA9C1 /* ReadingCatetoryModel.swift in Sources */,
 				4E17B02B22BE4B8A0086B2C5 /* TodayHeaderCell.swift in Sources */,
 				4E7D60DF22BBC0F2001AE0AD /* APIService.swift in Sources */,
 				4E20A42322BCFEC4007AA9C1 /* ReadingSubCategoryModel.swift in Sources */,
+				1A7ABDCA22C0AFD60017AA5F /* WelfareController.swift in Sources */,
 				4E17B03F22BF1E970086B2C5 /* GKNavigationController.swift in Sources */,
 				4EDA79D522BBAE99000F33AE /* AppDelegate.swift in Sources */,
 				4E17B03122BE51620086B2C5 /* TodayItemCell.swift in Sources */,

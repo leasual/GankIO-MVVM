@@ -17,8 +17,8 @@ struct ReadingCatetoryModel: Mappable {
     init() {}
     
     mutating func mapping(map: Map) {
-        code <- map["code"]
-        data <- map["data"]
+        code <- map["error"]
+        data <- map["results"]
     }
 }
 

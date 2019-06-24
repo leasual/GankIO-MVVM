@@ -63,6 +63,7 @@ target 'GankIO-MVVM' do
   pod 'CBFlashyTabBarController'
   pod 'QMUIKit'
   pod 'Cards'
+  pod 'CHTCollectionViewWaterfallLayout/Swift'
 
   # Pods for GankIO-MVVM
   target 'GankIO-MVVMTests' do

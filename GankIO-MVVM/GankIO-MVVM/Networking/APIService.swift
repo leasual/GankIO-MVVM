@@ -16,7 +16,7 @@ import Moya
 protocol API {
     func getTodayData() -> Observable<OneDayModel>
     func getHistoryDate() -> Observable<Any>
-    func getTechCategoryData(category: String, page: Int) -> Observable<CommonFeedModel>
+    func getTechCategoryData(category: String, page: Int) -> Observable<CategoryDataModel>
     func getOneDay(year: String, month: String, day: String) -> Observable<OneDayModel>
     func getReadingCategories() -> Observable<ReadingCatetoryModel>
     func getReadingSubCategories(category: String) -> Observable<ReadingSubCategoryModel>
@@ -38,8 +38,8 @@ class APIService: API {
         return request(.historyDate)
     }
     
-    func getTechCategoryData(category: String, page: Int) -> Observable<CommonFeedModel> {
-        return requestObject(.techCategoryData(category: category, page: page), type: CommonFeedModel.self)
+    func getTechCategoryData(category: String, page: Int) -> Observable<CategoryDataModel> {
+        return requestObject(.techCategoryData(category: category, page: page), type: CategoryDataModel.self)
     }
     
     func getOneDay(year: String, month: String, day: String) -> Observable<OneDayModel> {

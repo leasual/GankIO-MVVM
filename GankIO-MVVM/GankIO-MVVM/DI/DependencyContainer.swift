@@ -33,6 +33,14 @@ struct DependencyContainer {
         container.register(TodayDetailController.self) { resolver in
             TodayDetailController(viewModel: resolver.resolve(TodayDetailViewModel.self)!)
         }
+        // MARK: WelfareController
+        container.register(APIService.self) { _ in APIService(gankIOAPIProvider: GankIOProvider) }
+        container.register(WelfareViewModel.self) { resolver in
+            WelfareViewModel(apiService: resolver.resolve(APIService.self)!)
+        }
+        container.register(WelfareController.self) { resolver in
+            WelfareController(viewModel: resolver.resolve(WelfareViewModel.self)!)
+        }
         
         return container
     }

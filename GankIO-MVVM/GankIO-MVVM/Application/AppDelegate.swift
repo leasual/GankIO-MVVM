@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = .white
-        self.window?.rootViewController = createTabBarController()
+        self.window?.rootViewController = GKNavigationController(rootViewController: createTabBarController())
         
         return true
     }
@@ -31,13 +31,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         CBFlashyTabBar.appearance().tintColor = themeColor
         CBFlashyTabBar.appearance().barTintColor = .white
         
-        let eventsVC = GKNavigationController(rootViewController: DependencyContainer.resolve(TodayController.self))
+        let eventsVC = DependencyContainer.resolve(TodayController.self)
         eventsVC.tabBarItem = UITabBarItem(title: R.string.localizable.today(), image: R.image.eventsImage(), tag: 0)
-        let searchVC = GKNavigationController(rootViewController: UIViewController())//DependencyContainer.resolve(TodayController.self)
+        let searchVC = DependencyContainer.resolve(WelfareController.self)
         searchVC.tabBarItem = UITabBarItem(title: R.string.localizable.welfare(), image: R.image.searchImage(), tag: 0)
-        let activityVC = GKNavigationController(rootViewController: UIViewController())//DependencyContainer.resolve(TodayController.self)
+        let activityVC = UIViewController()//DependencyContainer.resolve(TodayController.self)
         activityVC.tabBarItem = UITabBarItem(title: R.string.localizable.reading(), image: R.image.highlightsImage(), tag: 0)
-        let settingsVC = GKNavigationController(rootViewController: UIViewController())//DependencyContainer.resolve(TodayController.self)
+        let settingsVC = UIViewController()//DependencyContainer.resolve(TodayController.self)
         settingsVC.tabBarItem = UITabBarItem(title: R.string.localizable.tech(), image: R.image.settingsImage(), tag: 0)
         //settingsVC.inverseColor()
         

@@ -1,6 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-GankIO-MVVM/Pods-GankIO-MVVM-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/CBFlashyTabBarController/CBFlashyTabBarController.framework
+${BUILT_PRODUCTS_DIR}/CHTCollectionViewWaterfallLayout/CHTCollectionViewWaterfallLayout.framework
 ${BUILT_PRODUCTS_DIR}/Cards/Cards.framework
 ${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework
 ${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework
