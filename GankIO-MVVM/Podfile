@@ -12,11 +12,12 @@ target 'GankIO-MVVM' do
   pod 'RxSwift'
   pod 'RxSwiftExt'
   pod 'RxDataSources'
-  pod 'RxGesture'
-  pod 'RxOptional'
-  pod 'RxTheme'
+  #pod 'RxGesture'
+  #pod 'RxOptional'
+  #pod 'RxTheme'
   pod 'RxViewController'
   pod 'NSObject+Rx' #NSObject has rx operator
+  pod 'Result'
   #pod 'RxAnimated'
   
   # create uiview use then for sugar
@@ -30,7 +31,7 @@ target 'GankIO-MVVM' do
   pod 'Kingfisher'
 
   # Date
-  pod 'DateToolsSwift'
+  #pod 'DateToolsSwift'
   pod 'SwiftDate'
   
   # Keyboard
@@ -61,9 +62,9 @@ target 'GankIO-MVVM' do
   
   # UI
   pod 'CBFlashyTabBarController'
-  pod 'QMUIKit'
-  pod 'Cards'
-  pod 'CHTCollectionViewWaterfallLayout/Swift'
+  #pod 'QMUIKit'
+  pod 'CHTCollectionViewWaterfallLayout'
+  pod 'MJRefresh'
 
   # Pods for GankIO-MVVM
   target 'GankIO-MVVMTests' do

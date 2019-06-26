@@ -22,7 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.backgroundColor = .white
-        self.window?.rootViewController = GKNavigationController(rootViewController: createTabBarController())
+        let rootController = GKNavigationController(rootViewController: createTabBarController())
+        rootController.navigationBar.isHidden = true
+        self.window?.rootViewController = rootController
         
         return true
     }

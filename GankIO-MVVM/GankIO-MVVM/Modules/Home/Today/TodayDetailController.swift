@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import QMUIKit
 
 class TodayDetailController: ViewController<TodayDetailViewModel> {
     
@@ -16,17 +15,10 @@ class TodayDetailController: ViewController<TodayDetailViewModel> {
     
     override func initialize() {
         
-        view.addSubview(githubButton)
-        githubButton.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(margin16 + 60)
-            make.right.equalToSuperview().offset(-margin16)
-            make.height.equalTo(40)
-            make.width.greaterThanOrEqualTo(40)
-        }
         view.addSubview(descriptionLabel)
         descriptionLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(margin16)
-            make.top.equalTo(githubButton.snp.bottom).offset(margin16)
+            make.top.equalToSuperview().offset(margin16)
             make.right.equalToSuperview().offset(-margin16)
         }
     }
@@ -54,11 +46,5 @@ class TodayDetailController: ViewController<TodayDetailViewModel> {
         $0.textAlignment = .left
         $0.font = UIFont.systemFont(ofSize: titleSize)
         $0.numberOfLines = 0
-    }
-    
-    let githubButton = QMUIGhostButton().then {
-        $0.setTitle("前往Github", for: .normal)
-        $0.ghostColor = themeColor
-        $0.titleEdgeInsets = UIEdgeInsets(top: 0, left: margin8, bottom: 0, right: margin8)
     }
 }

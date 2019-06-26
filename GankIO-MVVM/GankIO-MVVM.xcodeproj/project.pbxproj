@@ -25,7 +25,6 @@
 		4E17B03922BE8D470086B2C5 /* UINavigationBar+Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B03822BE8D470086B2C5 /* UINavigationBar+Sugar.swift */; };
 		4E17B03F22BF1E970086B2C5 /* GKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B03E22BF1E970086B2C5 /* GKNavigationController.swift */; };
 		4E17B04122BF2B910086B2C5 /* MultiSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B04022BF2B910086B2C5 /* MultiSectionItem.swift */; };
-		4E17B04322BF52FB0086B2C5 /* TodayCardItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B04222BF52FB0086B2C5 /* TodayCardItemCell.swift */; };
 		4E17B04622BF7C710086B2C5 /* TodayDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B04522BF7C710086B2C5 /* TodayDetailController.swift */; };
 		4E17B04822BF7CAC0086B2C5 /* TodayDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B04722BF7CAC0086B2C5 /* TodayDetailViewModel.swift */; };
 		4E20A41F22BCFEC4007AA9C1 /* OneDayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E20A41922BCFEC4007AA9C1 /* OneDayModel.swift */; };
@@ -95,7 +94,6 @@
 		4E17B03822BE8D470086B2C5 /* UINavigationBar+Sugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Sugar.swift"; sourceTree = "<group>"; };
 		4E17B03E22BF1E970086B2C5 /* GKNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GKNavigationController.swift; sourceTree = "<group>"; };
 		4E17B04022BF2B910086B2C5 /* MultiSectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSectionItem.swift; sourceTree = "<group>"; };
-		4E17B04222BF52FB0086B2C5 /* TodayCardItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCardItemCell.swift; sourceTree = "<group>"; };
 		4E17B04522BF7C710086B2C5 /* TodayDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailController.swift; sourceTree = "<group>"; };
 		4E17B04722BF7CAC0086B2C5 /* TodayDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewModel.swift; sourceTree = "<group>"; };
 		4E20A41922BCFEC4007AA9C1 /* OneDayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneDayModel.swift; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 				4E7D60DA22BBC0D0001AE0AD /* TodayViewModel.swift */,
 				4E17B02A22BE4B8A0086B2C5 /* TodayHeaderCell.swift */,
 				4E17B03022BE51620086B2C5 /* TodayItemCell.swift */,
-				4E17B04222BF52FB0086B2C5 /* TodayCardItemCell.swift */,
 				4E17B04522BF7C710086B2C5 /* TodayDetailController.swift */,
 				4E17B04722BF7CAC0086B2C5 /* TodayDetailViewModel.swift */,
 			);
@@ -726,7 +723,6 @@
 				4E7D60D722BBC0B3001AE0AD /* Observable+Operators.swift in Sources */,
 				1A7ABDD022C0B33B0017AA5F /* CollectionViewCell.swift in Sources */,
 				4E7D60D622BBC0B3001AE0AD /* Observable+Logging.swift in Sources */,
-				4E17B04322BF52FB0086B2C5 /* TodayCardItemCell.swift in Sources */,
 				4E7D60E722BBC18E001AE0AD /* ViewModel.swift in Sources */,
 				4ECD12A522BDCC0600714583 /* MoyaErrorPlugin.swift in Sources */,
 				4E7D60EE22BBC27E001AE0AD /* ErrorTracker.swift in Sources */,

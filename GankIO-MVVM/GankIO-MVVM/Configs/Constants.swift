@@ -11,6 +11,7 @@ import UIKit
 
 let margin8: CGFloat = 8.0
 let margin16: CGFloat = 16.0
+let margin32: CGFloat = 32.0
 
 let bigTitleSize: CGFloat = 24.0
 let titleSize: CGFloat = 18.0
@@ -19,3 +20,4 @@ let contentSize: CGFloat = 14.0
 let subContentSize: CGFloat = 12.0
 
 let themeColor = #colorLiteral(red: 0.1176470588, green: 0.1176470588, blue: 0.431372549, alpha: 1)
+let separatorColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)

@@ -13,7 +13,6 @@ import RxSwift
 import Then
 import Rswift
 import RxDataSources
-import Cards
 
 class TodayController: ViewController<TodayViewModel> {
     var dataSource: RxTableViewSectionedReloadDataSource<SectionType<MultiSectionItem<CommonFeedModel>>>?
@@ -26,6 +25,7 @@ class TodayController: ViewController<TodayViewModel> {
         tableView.snp.makeConstraints { (make) in
             make.width.equalToSuperview()
             make.height.equalToSuperview()
+            make.center.equalToSuperview()
         }
     }
     
@@ -42,10 +42,9 @@ class TodayController: ViewController<TodayViewModel> {
                     return cell
                 case .SectionItem(let model):
                     let cell = tableview.dequeueReusableCell(withIdentifier: "itemCell") as! TodayItemCell
-                    cell.selectionStyle = .none
+                    //cell.selectionStyle = .none
                     cell.itemModel = model
                     self.commonFeedModel = model
-//                    cell.articleCard.shouldPresent(detailVC, from: self, fullscreen: true)
                     return cell
                 }
             },
@@ -54,6 +53,10 @@ class TodayController: ViewController<TodayViewModel> {
         })
         output.tableDataList.asDriver().drive(tableView.rx.items(dataSource: dataSource!))
         .disposed(by: rx.disposeBag)
+        //selected item
+        tableView.rx.itemSelected.subscribe(onNext: { indexPath in
+            self.tableView.deselectRow(at: indexPath, animated: false)
+        }).disposed(by: rx.disposeBag)
         
         tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)
         
@@ -63,12 +66,11 @@ class TodayController: ViewController<TodayViewModel> {
         $0.backgroundColor = .white
         $0.register(TodayHeaderCell.self, forCellReuseIdentifier: "headerCell")
         $0.register(TodayItemCell.self, forCellReuseIdentifier: "itemCell")
-        $0.register(TodayCardItemCell.self, forCellReuseIdentifier: "cardItemCell")
         $0.estimatedRowHeight = 80
-        //设置分割线位置和颜色以及大小
-        $0.separatorColor = .lightGray
-        $0.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        //隐藏分割线
+        //set separator line color and inset
+        $0.separatorColor = separatorColor
+        $0.separatorInset = UIEdgeInsets(top: 0, left: margin16, bottom: 0, right: 0)
+        //hide separator line
         //$0.separatorStyle = .none
     }
     
@@ -95,6 +97,7 @@ extension TodayController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //auto fit cell size height
         return UITableView.automaticDimension
     }
     

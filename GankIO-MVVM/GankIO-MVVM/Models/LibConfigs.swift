@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import CocoaLumberjack
-import QMUIKit
+
 
 class LibConfigs: NSObject {
     static let shared = LibConfigs()
@@ -20,7 +20,6 @@ class LibConfigs: NSObject {
     
     func setupLibs(with window: UIWindow? = nil) {
         setupCocoaLumberjack()
-        setupQMUI()
     }
     
     private func setupCocoaLumberjack() {
@@ -30,10 +29,5 @@ class LibConfigs: NSObject {
         fileLogger.rollingFrequency = TimeInterval(60*60*24)  // 24 hours
         fileLogger.logFileManager.maximumNumberOfLogFiles = 7
         DDLog.add(fileLogger)
-    }
-    
-    private func setupQMUI() {
-        // QMUIConsole 默认只在 DEBUG 下会显示，作为 Demo，改为不管什么环境都允许显示
-        QMUIConsole.sharedInstance().canShow = true
     }
 }

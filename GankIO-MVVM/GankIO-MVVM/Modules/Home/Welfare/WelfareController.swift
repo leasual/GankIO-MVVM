@@ -10,68 +10,74 @@ import Foundation
 import UIKit
 import CHTCollectionViewWaterfallLayout
 import RxDataSources
+import MJRefresh
+import RxCocoa
 
 class WelfareController: ViewController<WelfareViewModel> {
     
     var dataSource: RxCollectionViewSectionedReloadDataSource<SectionModel<String, String>>?
-    var collectionView: UICollectionView?
+    var collectionView: UICollectionView!
+    var collectionLayout: CHTCollectionViewWaterfallLayout!
+    
     
     override func initialize() {
         self.navigationController?.navigationBar.isHidden = true
         setupCollectionView()
-        view.addSubview(collectionView!)
-        collectionView!.snp.makeConstraints { (make) in
-            make.width.equalToSuperview()
-            make.height.equalToSuperview()
-            make.top.equalToSuperview().offset(80)
-        }
     }
     
     override func initBindings() {
-        let output = viewModel.transform(input: WelfareViewModel.Input())
+        self.collectionView.mj_header.
+        let output = viewModel.transform(input: WelfareViewModel.Input(
+            pullToRefresh: self.collectionView.mj_header.rx.reachedBottom.asDriver(),
+            loadMore: self.collectionView.mj_footer.rx.refreshing.asDriver()))
         
         dataSource = RxCollectionViewSectionedReloadDataSource<SectionModel<String, String>> (
             configureCell: { (dataSource, collectionView, index, model) -> UICollectionViewCell in
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: index) as! WelfareItemCell
                 cell.imageUrl = model
                 return cell
-            }
+        }
         )
-
-        output.collectionDataList.asDriver().drive(collectionView!.rx.items(dataSource: dataSource!))
+        
+        output.collectionDataList.asDriver().drive(collectionView.rx.items(dataSource: dataSource!))
             .disposed(by: rx.disposeBag)
         
-        collectionView?.rx.setDelegate(self).disposed(by: rx.disposeBag)
+        //collectionView?.rx.setDelegate(self).disposed(by: rx.disposeBag)
+        //it must use this to set delegate, otherwise app will crash
+        collectionView.delegate = self
     }
     
     
     private func setupCollectionView() {
+        
+        let collectionLayout = CHTCollectionViewWaterfallLayout()
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: collectionLayout)
-        collectionView?.backgroundColor = .white
-        collectionView?.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        collectionView?.alwaysBounceVertical = true
-        collectionView?.register(WelfareItemCell.self, forCellWithReuseIdentifier: "collectionCell")
-        collectionView?.translatesAutoresizingMaskIntoConstraints = true
+        collectionView.backgroundColor = .white
+        //collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        collectionView.alwaysBounceVertical = true
+        collectionView.register(WelfareItemCell.self, forCellWithReuseIdentifier: "collectionCell")
+        
+        self.view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+            make.width.equalToSuperview()
+            make.height.equalToSuperview()
+        }
+        
     }
     
-//    let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: collectionLayout).then {
-//        // Collection view attributes
-//        $0.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-//        $0.alwaysBounceVertical = true
-//        $0.register(WelfareItemCell.self, forCellWithReuseIdentifier: "collectionCell")
-//    }
-    
-    let collectionLayout = CHTCollectionViewWaterfallLayout().then {
-        $0.minimumColumnSpacing = 1.0
-        $0.minimumInteritemSpacing = 1.0
-    }
+    let footerRefresh = MJRefreshAutoFooter()
+    let headerRefresh = MJRefreshNormalHeader()
     
 }
 
 extension WelfareController: CHTCollectionViewDelegateWaterfallLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 500, height: 500)
+    
+    @objc func footerLoading() {
+        
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: Int(self.view.bounds.width / 2), height: Int(Float.random(in: 200..<300)))
+    }
 }

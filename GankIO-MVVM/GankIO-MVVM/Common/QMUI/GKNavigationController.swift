@@ -7,8 +7,8 @@
 //
 
 import Foundation
-import QMUIKit
+import UIKit
 
-class GKNavigationController: QMUINavigationController {
+class GKNavigationController: UINavigationController {
  
 }

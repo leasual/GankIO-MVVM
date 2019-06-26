@@ -19,8 +19,9 @@ class TodayHeaderCell: TableViewCell {
     
     override func setupViews() {
         addSubview(todayLabel)
+        
         todayLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(16)
+            make.top.equalTo(margin16)
             make.left.equalTo(margin16)
             make.right.equalTo(-margin16)
         }
@@ -29,7 +30,7 @@ class TodayHeaderCell: TableViewCell {
             make.top.equalTo(todayLabel.snp.bottom).offset(margin8)
             make.left.equalTo(todayLabel.snp.left)
             make.right.equalTo(todayLabel.snp.right)
-            make.bottom.equalToSuperview().offset(-margin16)
+            make.bottom.equalToSuperview().offset(-margin32)
         }
     }
     

@@ -18,14 +18,16 @@ class WelfareItemCell: CollectionViewCell {
     }
     
     override func setupViews() {
-        addSubview(imageView)
+        contentView.addSubview(imageView)
         imageView.snp.makeConstraints { (make) in
-            make.width.equalTo(150)
-            make.height.equalTo(200)
+            make.left.top.equalToSuperview()
+            make.right.bottom.equalToSuperview()
         }
     }
     
     let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
+        $0.clipsToBounds = true
+        $0.layer.cornerRadius = 10
     }
 }
