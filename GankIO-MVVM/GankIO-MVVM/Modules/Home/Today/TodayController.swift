@@ -15,7 +15,7 @@ import Rswift
 import RxDataSources
 
 class TodayController: ViewController<TodayViewModel> {
-    var dataSource: RxTableViewSectionedReloadDataSource<SectionType<MultiSectionItem<CommonFeedModel>>>?
+    var dataSource: RxTableViewSectionedReloadDataSource<TodaySectionType>?
     var commonFeedModel: CommonFeedModel?
     
     override func initialize() {
@@ -32,7 +32,7 @@ class TodayController: ViewController<TodayViewModel> {
     override func initBindings() {
         let output = viewModel.transform(input: TodayViewModel.Input())
         
-        dataSource = RxTableViewSectionedReloadDataSource<SectionType<MultiSectionItem<CommonFeedModel>>>(
+        dataSource = RxTableViewSectionedReloadDataSource<TodaySectionType>(
             configureCell: { dataSource, tableview, index, item in
                 switch dataSource[index] {
                     
@@ -47,15 +47,27 @@ class TodayController: ViewController<TodayViewModel> {
                     self.commonFeedModel = model
                     return cell
                 }
-            },
+        },
             titleForHeaderInSection: { dataSource, index in
                 return dataSource.sectionModels[index].header
         })
         output.tableDataList.asDriver().drive(tableView.rx.items(dataSource: dataSource!))
-        .disposed(by: rx.disposeBag)
+            .disposed(by: rx.disposeBag)
         //selected item
         tableView.rx.itemSelected.subscribe(onNext: { indexPath in
             self.tableView.deselectRow(at: indexPath, animated: false)
+        }).disposed(by: rx.disposeBag)
+        //selected model
+        tableView.rx.modelSelected(TodaySectionItem.self).subscribe(onNext: { model in
+            switch(model) {
+            case .SectionItem(let model):
+                let detailVC = DependencyContainer.resolve(WebViewController.self)
+                detailVC.model = model.url ?? ""
+                self.navigationController?.pushViewController(detailVC, animated: true)
+                break
+            case .TitleSectionItem:
+                break
+            }
         }).disposed(by: rx.disposeBag)
         
         tableView.rx.setDelegate(self).disposed(by: rx.disposeBag)
@@ -79,7 +91,7 @@ class TodayController: ViewController<TodayViewModel> {
 extension TodayController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-
+        
         let headerView = UIView()
         headerView.backgroundColor = .white
         let titleLabel = UILabel().then {
@@ -105,10 +117,5 @@ extension TodayController: UITableViewDelegate {
         return 0
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailVC = DependencyContainer.resolve(TodayDetailController.self)
-        detailVC.commendFeeModel = self.commonFeedModel
-        self.navigationController?.pushViewController(detailVC, animated: true)
-    }
 }
 

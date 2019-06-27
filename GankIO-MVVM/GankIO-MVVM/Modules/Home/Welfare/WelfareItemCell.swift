@@ -8,12 +8,17 @@
 
 import Foundation
 import SnapKit
+import SDWebImage
 
 class WelfareItemCell: CollectionViewCell {
     
     var imageUrl: String? {
         didSet {
-            self.imageView.kf.setImage(with: URL(string: self.imageUrl ?? ""))
+            self.imageView.sd_setImage(with: URL(string: self.imageUrl ?? "")) { (uiImage, error, type, url) in
+                if let _ = error {
+                    self.imageView.image = UIImage(named: "imageDefault\(Int.random(in: 1..<12))")
+                }
+            }
         }
     }
     

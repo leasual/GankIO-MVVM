@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A00098422C4428200C609DA /* MJRefresh+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00098322C4428200C609DA /* MJRefresh+Rx.swift */; };
+		1A00098622C461C700C609DA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00098522C461C700C609DA /* WebViewController.swift */; };
 		1A14F62C57B1207961647AA2 /* Pods_GankIO_MVVMTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58F6B81C668EAB59987A78FD /* Pods_GankIO_MVVMTests.framework */; };
+		1A311EC522C4A13C004482C1 /* ImageBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A311EC422C4A13C004482C1 /* ImageBrowserController.swift */; };
+		1A311EC822C4B53B004482C1 /* ReadingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A311EC722C4B53B004482C1 /* ReadingController.swift */; };
+		1A311ECA22C4B569004482C1 /* ReadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A311EC922C4B569004482C1 /* ReadingViewModel.swift */; };
+		1A311ECC22C4B6BD004482C1 /* ReadingCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A311ECB22C4B6BD004482C1 /* ReadingCategoryCell.swift */; };
+		1A311ECE22C4B74E004482C1 /* ReadingSubCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A311ECD22C4B74E004482C1 /* ReadingSubCategoryCell.swift */; };
 		1A7ABDCA22C0AFD60017AA5F /* WelfareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7ABDC922C0AFD60017AA5F /* WelfareController.swift */; };
 		1A7ABDCC22C0AFE70017AA5F /* WelfareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7ABDCB22C0AFE70017AA5F /* WelfareViewModel.swift */; };
 		1A7ABDCE22C0B2F10017AA5F /* WelfareItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7ABDCD22C0B2F10017AA5F /* WelfareItemCell.swift */; };
@@ -24,7 +31,6 @@
 		4E17B03722BE5F040086B2C5 /* SectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B03622BE5F040086B2C5 /* SectionType.swift */; };
 		4E17B03922BE8D470086B2C5 /* UINavigationBar+Sugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B03822BE8D470086B2C5 /* UINavigationBar+Sugar.swift */; };
 		4E17B03F22BF1E970086B2C5 /* GKNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B03E22BF1E970086B2C5 /* GKNavigationController.swift */; };
-		4E17B04122BF2B910086B2C5 /* MultiSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B04022BF2B910086B2C5 /* MultiSectionItem.swift */; };
 		4E17B04622BF7C710086B2C5 /* TodayDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B04522BF7C710086B2C5 /* TodayDetailController.swift */; };
 		4E17B04822BF7CAC0086B2C5 /* TodayDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B04722BF7CAC0086B2C5 /* TodayDetailViewModel.swift */; };
 		4E20A41F22BCFEC4007AA9C1 /* OneDayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E20A41922BCFEC4007AA9C1 /* OneDayModel.swift */; };
@@ -35,7 +41,6 @@
 		4E7D60C922BBBFE7001AE0AD /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60C822BBBFE7001AE0AD /* DependencyContainer.swift */; };
 		4E7D60D622BBC0B3001AE0AD /* Observable+Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60D322BBC0B3001AE0AD /* Observable+Logging.swift */; };
 		4E7D60D722BBC0B3001AE0AD /* Observable+Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60D422BBC0B3001AE0AD /* Observable+Operators.swift */; };
-		4E7D60D822BBC0B3001AE0AD /* Kingfisher+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60D522BBC0B3001AE0AD /* Kingfisher+Rx.swift */; };
 		4E7D60DB22BBC0D0001AE0AD /* TodayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60D922BBC0D0001AE0AD /* TodayController.swift */; };
 		4E7D60DC22BBC0D0001AE0AD /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60DA22BBC0D0001AE0AD /* TodayViewModel.swift */; };
 		4E7D60DF22BBC0F2001AE0AD /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7D60DD22BBC0F2001AE0AD /* APIService.swift */; };
@@ -75,6 +80,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A00098322C4428200C609DA /* MJRefresh+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MJRefresh+Rx.swift"; sourceTree = "<group>"; };
+		1A00098522C461C700C609DA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		1A311EC422C4A13C004482C1 /* ImageBrowserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageBrowserController.swift; sourceTree = "<group>"; };
+		1A311EC722C4B53B004482C1 /* ReadingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingController.swift; sourceTree = "<group>"; };
+		1A311EC922C4B569004482C1 /* ReadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingViewModel.swift; sourceTree = "<group>"; };
+		1A311ECB22C4B6BD004482C1 /* ReadingCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingCategoryCell.swift; sourceTree = "<group>"; };
+		1A311ECD22C4B74E004482C1 /* ReadingSubCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingSubCategoryCell.swift; sourceTree = "<group>"; };
 		1A7ABDC922C0AFD60017AA5F /* WelfareController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelfareController.swift; sourceTree = "<group>"; };
 		1A7ABDCB22C0AFE70017AA5F /* WelfareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelfareViewModel.swift; sourceTree = "<group>"; };
 		1A7ABDCD22C0B2F10017AA5F /* WelfareItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelfareItemCell.swift; sourceTree = "<group>"; };
@@ -93,7 +105,6 @@
 		4E17B03622BE5F040086B2C5 /* SectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionType.swift; sourceTree = "<group>"; };
 		4E17B03822BE8D470086B2C5 /* UINavigationBar+Sugar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Sugar.swift"; sourceTree = "<group>"; };
 		4E17B03E22BF1E970086B2C5 /* GKNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GKNavigationController.swift; sourceTree = "<group>"; };
-		4E17B04022BF2B910086B2C5 /* MultiSectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSectionItem.swift; sourceTree = "<group>"; };
 		4E17B04522BF7C710086B2C5 /* TodayDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailController.swift; sourceTree = "<group>"; };
 		4E17B04722BF7CAC0086B2C5 /* TodayDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayDetailViewModel.swift; sourceTree = "<group>"; };
 		4E20A41922BCFEC4007AA9C1 /* OneDayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneDayModel.swift; sourceTree = "<group>"; };
@@ -105,7 +116,6 @@
 		4E7D60C822BBBFE7001AE0AD /* DependencyContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		4E7D60D322BBC0B3001AE0AD /* Observable+Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Logging.swift"; sourceTree = "<group>"; };
 		4E7D60D422BBC0B3001AE0AD /* Observable+Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Operators.swift"; sourceTree = "<group>"; };
-		4E7D60D522BBC0B3001AE0AD /* Kingfisher+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Kingfisher+Rx.swift"; sourceTree = "<group>"; };
 		4E7D60D922BBC0D0001AE0AD /* TodayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayController.swift; sourceTree = "<group>"; };
 		4E7D60DA22BBC0D0001AE0AD /* TodayViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		4E7D60DD22BBC0F2001AE0AD /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -166,12 +176,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A311EC622C4B519004482C1 /* Reading */ = {
+			isa = PBXGroup;
+			children = (
+				1A311EC722C4B53B004482C1 /* ReadingController.swift */,
+				1A311EC922C4B569004482C1 /* ReadingViewModel.swift */,
+				1A311ECB22C4B6BD004482C1 /* ReadingCategoryCell.swift */,
+				1A311ECD22C4B74E004482C1 /* ReadingSubCategoryCell.swift */,
+			);
+			path = Reading;
+			sourceTree = "<group>";
+		};
 		1A7ABDC822C0AFBE0017AA5F /* Welfare */ = {
 			isa = PBXGroup;
 			children = (
 				1A7ABDC922C0AFD60017AA5F /* WelfareController.swift */,
 				1A7ABDCB22C0AFE70017AA5F /* WelfareViewModel.swift */,
 				1A7ABDCD22C0B2F10017AA5F /* WelfareItemCell.swift */,
+				1A311EC422C4A13C004482C1 /* ImageBrowserController.swift */,
 			);
 			path = Welfare;
 			sourceTree = "<group>";
@@ -296,8 +318,10 @@
 		4E7D60D122BBC075001AE0AD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1A311EC622C4B519004482C1 /* Reading */,
 				1A7ABDC822C0AFBE0017AA5F /* Welfare */,
 				4E17B04422BF7C4C0086B2C5 /* Today */,
+				1A00098522C461C700C609DA /* WebViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -305,7 +329,7 @@
 		4E7D60D222BBC090001AE0AD /* RxSwift */ = {
 			isa = PBXGroup;
 			children = (
-				4E7D60D522BBC0B3001AE0AD /* Kingfisher+Rx.swift */,
+				1A00098322C4428200C609DA /* MJRefresh+Rx.swift */,
 				4E7D60D322BBC0B3001AE0AD /* Observable+Logging.swift */,
 				4E7D60D422BBC0B3001AE0AD /* Observable+Operators.swift */,
 			);
@@ -321,7 +345,6 @@
 				4E7D60E422BBC18E001AE0AD /* ViewModelType.swift */,
 				4E17B02C22BE4C2D0086B2C5 /* TableViewCell.swift */,
 				4E17B03622BE5F040086B2C5 /* SectionType.swift */,
-				4E17B04022BF2B910086B2C5 /* MultiSectionItem.swift */,
 				1A7ABDCF22C0B33B0017AA5F /* CollectionViewCell.swift */,
 			);
 			path = Common;
@@ -717,6 +740,9 @@
 				4E20A41F22BCFEC4007AA9C1 /* OneDayModel.swift in Sources */,
 				4E17B03722BE5F040086B2C5 /* SectionType.swift in Sources */,
 				4E17B02622BE35360086B2C5 /* Localizeble.swift in Sources */,
+				1A311EC822C4B53B004482C1 /* ReadingController.swift in Sources */,
+				1A311ECE22C4B74E004482C1 /* ReadingSubCategoryCell.swift in Sources */,
+				1A311ECA22C4B569004482C1 /* ReadingViewModel.swift in Sources */,
 				4E17B04622BF7C710086B2C5 /* TodayDetailController.swift in Sources */,
 				4E17B04822BF7CAC0086B2C5 /* TodayDetailViewModel.swift in Sources */,
 				1A7ABDCE22C0B2F10017AA5F /* WelfareItemCell.swift in Sources */,
@@ -728,8 +754,8 @@
 				4E7D60EE22BBC27E001AE0AD /* ErrorTracker.swift in Sources */,
 				4E17B03922BE8D470086B2C5 /* UINavigationBar+Sugar.swift in Sources */,
 				4E7D60C922BBBFE7001AE0AD /* DependencyContainer.swift in Sources */,
-				4E7D60D822BBC0B3001AE0AD /* Kingfisher+Rx.swift in Sources */,
 				4E20A42122BCFEC4007AA9C1 /* ReadingFeedModel.swift in Sources */,
+				1A311ECC22C4B6BD004482C1 /* ReadingCategoryCell.swift in Sources */,
 				4E17B02F22BE4F160086B2C5 /* Constants.swift in Sources */,
 				1A7ABDD222C0C2AD0017AA5F /* CategoryDataModel.swift in Sources */,
 				4E7D60DB22BBC0D0001AE0AD /* TodayController.swift in Sources */,
@@ -740,14 +766,16 @@
 				4E7D60E922BBC18E001AE0AD /* ViewController.swift in Sources */,
 				4E7D60E822BBC18E001AE0AD /* ViewModelType.swift in Sources */,
 				4E7D60EB22BBC1C5001AE0AD /* LogManager.swift in Sources */,
-				4E17B04122BF2B910086B2C5 /* MultiSectionItem.swift in Sources */,
+				1A311EC522C4A13C004482C1 /* ImageBrowserController.swift in Sources */,
 				1A7ABDCC22C0AFE70017AA5F /* WelfareViewModel.swift in Sources */,
 				4E20A42222BCFEC4007AA9C1 /* GankIOProvider.swift in Sources */,
 				4ECD12A322BD20CD00714583 /* LibConfigs.swift in Sources */,
 				4E20A42022BCFEC4007AA9C1 /* ReadingCatetoryModel.swift in Sources */,
+				1A00098422C4428200C609DA /* MJRefresh+Rx.swift in Sources */,
 				4E17B02B22BE4B8A0086B2C5 /* TodayHeaderCell.swift in Sources */,
 				4E7D60DF22BBC0F2001AE0AD /* APIService.swift in Sources */,
 				4E20A42322BCFEC4007AA9C1 /* ReadingSubCategoryModel.swift in Sources */,
+				1A00098622C461C700C609DA /* WebViewController.swift in Sources */,
 				1A7ABDCA22C0AFD60017AA5F /* WelfareController.swift in Sources */,
 				4E17B03F22BF1E970086B2C5 /* GKNavigationController.swift in Sources */,
 				4EDA79D522BBAE99000F33AE /* AppDelegate.swift in Sources */,

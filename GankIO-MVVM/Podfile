@@ -28,8 +28,9 @@ target 'GankIO-MVVM' do
   pod 'Moya-ObjectMapper/RxSwift', :git => 'https://github.com/leasual/Moya-ObjectMapper.git'
   #pod 'ObjectMapper'
   # Image
-  pod 'Kingfisher'
-
+  # it will use large memory to cache image
+  #pod 'Kingfisher'
+  pod 'SDWebImage'
   # Date
   #pod 'DateToolsSwift'
   pod 'SwiftDate'
@@ -65,6 +66,7 @@ target 'GankIO-MVVM' do
   #pod 'QMUIKit'
   pod 'CHTCollectionViewWaterfallLayout'
   pod 'MJRefresh'
+  pod 'ATGMediaBrowser'
 
   # Pods for GankIO-MVVM
   target 'GankIO-MVVMTests' do

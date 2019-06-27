@@ -1,0 +1,6 @@
+framework module ATGMediaBrowser {
+  umbrella header "ATGMediaBrowser-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -9,17 +9,21 @@
 import Foundation
 import RxDataSources
 
-
-struct SectionType<T> {
-    var header: String
-    var items: [T]
+enum TodaySectionItem {
+    case TitleSectionItem(title: String)
+    case SectionItem(model: CommonFeedModel)
 }
 
-extension SectionType: SectionModelType {
+struct TodaySectionType {
+    var header: String
+    var items: [TodaySectionItem]
+}
+
+extension TodaySectionType: SectionModelType {
     
-    typealias Item = T
+    typealias Item = TodaySectionItem
     
-    init(original: SectionType, items: [T]) {
+    init(original: TodaySectionType, items: [TodaySectionItem]) {
         self = original
         self.items = items
     }

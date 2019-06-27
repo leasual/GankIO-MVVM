@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         eventsVC.tabBarItem = UITabBarItem(title: R.string.localizable.today(), image: R.image.eventsImage(), tag: 0)
         let searchVC = DependencyContainer.resolve(WelfareController.self)
         searchVC.tabBarItem = UITabBarItem(title: R.string.localizable.welfare(), image: R.image.searchImage(), tag: 0)
-        let activityVC = UIViewController()//DependencyContainer.resolve(TodayController.self)
+        let activityVC = DependencyContainer.resolve(ReadingController.self)
         activityVC.tabBarItem = UITabBarItem(title: R.string.localizable.reading(), image: R.image.highlightsImage(), tag: 0)
         let settingsVC = UIViewController()//DependencyContainer.resolve(TodayController.self)
         settingsVC.tabBarItem = UITabBarItem(title: R.string.localizable.tech(), image: R.image.settingsImage(), tag: 0)
