@@ -10,16 +10,9 @@ import RxSwift
 import RxCocoa
 import Moya
 
-class TodayViewModel: ViewModel, ViewModelType {
+class TodayViewModel: ViewModel {
     
     let error = ErrorTracker()
-    struct Input {
-        //let loginTap: ControlEvent<Void>
-    }
-    
-    struct Output {
-        let tableDataList: BehaviorRelay<[TodaySectionType]>
-    }
     
     func transform(input: Input) -> Output {
         let tableDataDriver = BehaviorRelay<[TodaySectionType]>(value: [])
@@ -107,4 +100,13 @@ class TodayViewModel: ViewModel, ViewModelType {
         return dataList
     }
     
+}
+
+extension TodayViewModel: ViewModelType {
+    struct Input {
+    }
+    
+    struct Output {
+        let tableDataList: BehaviorRelay<[TodaySectionType]>
+    }
 }

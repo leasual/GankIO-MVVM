@@ -89,7 +89,7 @@ class WelfareController: ViewController<WelfareViewModel> {
 extension WelfareController: UICollectionViewDelegate, CHTCollectionViewDelegateWaterfallLayout, MediaBrowserViewControllerDataSource {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: Int(self.view.bounds.width / 2), height: Int(Float.random(in: 200..<350)))
+        return CGSize(width: Int(self.view.bounds.width / 2), height: indexPath.row % 2 == 0 ? 200 : 300)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -99,23 +99,26 @@ extension WelfareController: UICollectionViewDelegate, CHTCollectionViewDelegate
         let mediaBrowser = MediaBrowserViewController(dataSource: self)
         mediaBrowser.shouldShowPageControl = false
         mediaBrowser.contentTransformer = DefaultContentTransformers.verticalZoomInOut
-        mediaBrowser.gestureDirection = .vertical
+        mediaBrowser.gestureDirection = .horizontal
         
         present(mediaBrowser, animated: true, completion: nil)
         
     }
     
     func numberOfItems(in mediaBrowser: MediaBrowserViewController) -> Int {
-        return viewModel.count
+        return 1//viewModel.count
     }
     
     func mediaBrowser(_ mediaBrowser: MediaBrowserViewController, imageAt index: Int, completion: @escaping MediaBrowserViewControllerDataSource.CompletionBlock) {
         logDebug("mediaBrowser index= \(index)")
         let imageView = UIImageView()
-        let url = self.output.collectionDataList.value[0].items[index]
+        let url = self.output.collectionDataList.value[0].items[self.currentItem]
         imageView.sd_setImage(with: URL(string: url)) { (uiImage, error, type, url) in
-            if let _ = error {
-                imageView.image = UIImage(named: "imageDefault\(Int.random(in: 1..<12))")
+            logDebug("error= \(uiImage == nil)")
+            if uiImage == nil {
+                DispatchQueue.main.async {
+                    imageView.image = UIImage(named: "imageDefault\(Int.random(in: 1..<12))")
+                }
             }
         }
         completion(index, imageView.image, ZoomScale.default, nil)

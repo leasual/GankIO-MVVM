@@ -11,7 +11,7 @@ import UIKit
 import RxDataSources
 
 class ReadingController: ViewController<ReadingViewModel> {
-    var dataSource: RxTableViewSectionedReloadDataSource<TodaySectionType>?
+    var dataSource: RxTableViewSectionedReloadDataSource<ReadingSectionType>?
 
     override func initialize() {
         self.navigationController?.navigationBar.isHidden = true
@@ -26,31 +26,28 @@ class ReadingController: ViewController<ReadingViewModel> {
     override func initBindings() {
         let output = viewModel.transform(input: ReadingViewModel.Input())
         
-        dataSource = RxTableViewSectionedReloadDataSource<TodaySectionType>(
+        dataSource = RxTableViewSectionedReloadDataSource<ReadingSectionType>(
             configureCell: { dataSource, tableview, index, item in
                 switch dataSource[index] {
-                    
-                case .TitleSectionItem(let title):
-                    let cell = tableview.dequeueReusableCell(withIdentifier: "categoryCell") as! ReadingCategoryCell
-                    cell.title = title
-                    return cell
-                case .SectionItem(let url):
-                    let cell = tableview.dequeueReusableCell(withIdentifier: "subCategoryCell") as! ReadingSubCategoryCell
-                    //cell.selectionStyle = .none
-                    //cell.imageUrl = url
-
+                case .TitleSectionItem:
+                    return UITableViewCell()
+                case .SectionItem(let data):
+                    logDebug("item")
+                    let cell = tableview.dequeueReusableCell(withIdentifier: "readingCell") as! ReadingItemCell
+                    cell.model = data
                     return cell
                 }
         },
             titleForHeaderInSection: { dataSource, index in
                 return dataSource.sectionModels[index].header
         })
+        output.categoryData.asDriver().drive(tableView.rx.items(dataSource: dataSource!))
+            .disposed(by: rx.disposeBag)
     }
     
     let tableView = UITableView().then {
         $0.backgroundColor = .white
-        $0.register(ReadingCategoryCell.self, forCellReuseIdentifier: "categoryCell")
-        $0.register(ReadingSubCategoryCell.self, forCellReuseIdentifier: "subCategoryCell")
+        $0.register(ReadingItemCell.self, forCellReuseIdentifier: "readingCell")
         $0.estimatedRowHeight = 80
         //set separator line color and inset
         $0.separatorColor = separatorColor
