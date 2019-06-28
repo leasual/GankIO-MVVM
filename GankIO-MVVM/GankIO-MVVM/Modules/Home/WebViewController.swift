@@ -22,6 +22,7 @@ class WebViewController: UIViewController {
     
     private func setupWebView() {
         let webView = UIWebView(frame: self.view.frame)
+        webView.scalesPageToFit = true
         webView.delegate = self
         self.view.addSubview(webView)
         webView.snp.makeConstraints { (make) in
@@ -35,7 +36,8 @@ class WebViewController: UIViewController {
             webView.loadHTMLString(model ?? "", baseURL: nil)
             break
         case 2:
-            webView.loadRequest(URLRequest(url: URL(string: model ?? "")!))
+            //url can't contains space, otherwise app will crash
+            webView.loadRequest(URLRequest(url: URL(string: model?.replacingOccurrences(of: " ", with: "") ?? "")!))
             break
         default:
             break

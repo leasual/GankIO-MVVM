@@ -61,8 +61,11 @@ class TodayController: ViewController<TodayViewModel> {
         tableView.rx.modelSelected(TodaySectionItem.self).subscribe(onNext: { model in
             switch(model) {
             case .SectionItem(let model):
+                guard let url = model.url, !url.isEmpty else  {
+                    return
+                }
                 let detailVC = DependencyContainer.resolve(WebViewController.self)
-                detailVC.model = model.url ?? ""
+                detailVC.model = url
                 self.navigationController?.pushViewController(detailVC, animated: true)
                 break
             case .TitleSectionItem:

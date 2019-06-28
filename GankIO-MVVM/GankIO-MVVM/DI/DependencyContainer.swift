@@ -52,7 +52,14 @@ struct DependencyContainer {
         container.register(ReadingController.self) { resolver in
             ReadingController(viewModel: resolver.resolve(ReadingViewModel.self)!)
         }
-        
+        //MARK: ReadingArticleController
+        container.register(APIService.self) { _ in APIService(gankIOAPIProvider: GankIOProvider) }
+        container.register(ReadingArticleViewModel.self) { resolver in
+            ReadingArticleViewModel(apiService: resolver.resolve(APIService.self)!)
+        }
+        container.register(ReadingArticleController.self) { resolver in
+            ReadingArticleController(viewModel: resolver.resolve(ReadingArticleViewModel.self)!)
+        }
         return container
     }
     

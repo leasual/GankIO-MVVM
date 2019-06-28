@@ -46,19 +46,6 @@ class WelfareController: ViewController<WelfareViewModel> {
             .disposed(by: rx.disposeBag)
         output.endLoadMore.asDriver().drive(collectionView.mj_footer.rx.refreshState)
             .disposed(by: rx.disposeBag)
-        
-        //        collectionView.rx.itemSelected.subscribe(onNext: { indexPath in
-        //            self.collectionView.deselectItem(at: indexPath, animated: false)
-        //            logDebug("welfare item selected")
-        //        }).disposed(by: rx.disposeBag)
-        //        collectionView.rx.modelSelected(String.self).subscribe(onNext: { model in
-        //            logDebug("welfare model selected")
-        //            let controller = ImageBrowserController()
-        //            controller.url = model
-        //            controller.size = 10
-        //            self.navigationController?.present(controller, animated: true, completion: nil)
-        //        }).disposed(by: rx.disposeBag)
-        
         //collectionView?.rx.setDelegate(self).disposed(by: rx.disposeBag)
         //it must use this to set delegate, otherwise app will crash
         collectionView.delegate = self
@@ -95,7 +82,6 @@ extension WelfareController: UICollectionViewDelegate, CHTCollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: false)
         self.currentItem = indexPath.row
-        logDebug("select item index= \(self.currentItem)")
         let mediaBrowser = MediaBrowserViewController(dataSource: self)
         mediaBrowser.shouldShowPageControl = false
         mediaBrowser.contentTransformer = DefaultContentTransformers.verticalZoomInOut
@@ -117,7 +103,7 @@ extension WelfareController: UICollectionViewDelegate, CHTCollectionViewDelegate
             logDebug("error= \(uiImage == nil)")
             if uiImage == nil {
                 DispatchQueue.main.async {
-                    imageView.image = UIImage(named: "imageDefault\(Int.random(in: 1..<12))")
+                    imageView.image = UIImage(named: "imageDefault\(self.currentItem % 12)")
                 }
             }
         }

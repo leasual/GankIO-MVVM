@@ -11,7 +11,7 @@ import ObjectMapper
 
 struct ReadingFeedModel: Mappable {
     var code: Bool?
-    var data: [ReadingCatetoryModelData]?
+    var data: [ReadingFeedModelData]?
     
     init?(map: Map) {}
     init() {}
@@ -31,6 +31,8 @@ struct ReadingFeedModelData: Mappable {
     var deleted: Bool?
     var published_at: String?
     var raw: String?
+    var title: String?
+    var url: String?
     var site: SiteModel?
     
     init?(map: Map) {}
@@ -43,8 +45,10 @@ struct ReadingFeedModelData: Mappable {
         crawled <- map["crawled"]
         created_at <- map["created_at"]
         deleted <- map["deleted"]
-        published_at <- map["publish_at"]
+        published_at <- map["published_at"]
         raw <- map["raw"]
+        title <- map["title"]
+        url <- map["url"]
         site <- map["site"]
     }
 }

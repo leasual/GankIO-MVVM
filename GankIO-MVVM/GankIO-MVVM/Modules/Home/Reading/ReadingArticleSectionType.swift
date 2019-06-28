@@ -7,3 +7,24 @@
 //
 
 import Foundation
+import RxDataSources
+
+enum ReadingArticleSectionItem {
+    case TitleSectionItem(title: String)
+    case SectionItem(model: ReadingFeedModelData)
+}
+
+struct ReadingArticleSectionType {
+    var header: String
+    var items: [ReadingArticleSectionItem]
+}
+
+extension ReadingArticleSectionType: SectionModelType {
+    
+    typealias Item = ReadingArticleSectionItem
+    
+    init(original: ReadingArticleSectionType, items: [ReadingArticleSectionItem]) {
+        self = original
+        self.items = items
+    }
+}

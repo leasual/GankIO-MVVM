@@ -35,7 +35,7 @@ class ReadingItemCell: TableViewCell {
     let categoryImageView = UIImageView().then {
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 30
-        $0.contentMode = .scaleToFill
+        $0.contentMode = .scaleAspectFill
     }
     
     let categoryTitleLabel = UILabel().then {

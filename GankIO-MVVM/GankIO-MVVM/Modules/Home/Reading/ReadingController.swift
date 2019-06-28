@@ -32,7 +32,6 @@ class ReadingController: ViewController<ReadingViewModel> {
                 case .TitleSectionItem:
                     return UITableViewCell()
                 case .SectionItem(let data):
-                    logDebug("item")
                     let cell = tableview.dequeueReusableCell(withIdentifier: "readingCell") as! ReadingItemCell
                     cell.model = data
                     return cell
@@ -43,6 +42,20 @@ class ReadingController: ViewController<ReadingViewModel> {
         })
         output.categoryData.asDriver().drive(tableView.rx.items(dataSource: dataSource!))
             .disposed(by: rx.disposeBag)
+        tableView.rx.itemSelected.subscribe(onNext: {index in
+            self.tableView.deselectRow(at: index, animated: false)
+        }).disposed(by: rx.disposeBag)
+        tableView.rx.modelSelected(ReadingSectionItem.self).subscribe(onNext: { model in
+            switch(model) {
+            case .TitleSectionItem:
+                break
+            case .SectionItem(let model):
+                let controller = DependencyContainer.resolve(ReadingArticleController.self)
+                controller.category = model.id ?? ""
+                self.navigationController?.pushViewController(controller, animated: true)
+                break
+            }
+        }).disposed(by: rx.disposeBag)
     }
     
     let tableView = UITableView().then {

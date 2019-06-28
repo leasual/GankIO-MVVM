@@ -14,6 +14,7 @@
 		1A311EC822C4B53B004482C1 /* ReadingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A311EC722C4B53B004482C1 /* ReadingController.swift */; };
 		1A311ECA22C4B569004482C1 /* ReadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A311EC922C4B569004482C1 /* ReadingViewModel.swift */; };
 		1A311ECC22C4B6BD004482C1 /* ReadingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A311ECB22C4B6BD004482C1 /* ReadingItemCell.swift */; };
+		1A311ED022C58F75004482C1 /* ReadingArticleSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A311ECF22C58F75004482C1 /* ReadingArticleSectionType.swift */; };
 		1A7ABDCA22C0AFD60017AA5F /* WelfareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7ABDC922C0AFD60017AA5F /* WelfareController.swift */; };
 		1A7ABDCC22C0AFE70017AA5F /* WelfareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7ABDCB22C0AFE70017AA5F /* WelfareViewModel.swift */; };
 		1A7ABDCE22C0B2F10017AA5F /* WelfareItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A7ABDCD22C0B2F10017AA5F /* WelfareItemCell.swift */; };
@@ -22,7 +23,6 @@
 		2A185B920D76CD01042E61CB /* Pods_GankIO_MVVMUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2632EC46CA9F52A19D707B /* Pods_GankIO_MVVMUITests.framework */; };
 		4E0DCC6C22C50CAF00C0342C /* ReadingArticleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0DCC6B22C50CAF00C0342C /* ReadingArticleController.swift */; };
 		4E0DCC6E22C50CEE00C0342C /* ReadingArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0DCC6D22C50CEE00C0342C /* ReadingArticleViewModel.swift */; };
-		4E0DCC7022C50EA300C0342C /* ReadingArtitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0DCC6F22C50EA300C0342C /* ReadingArtitleModel.swift */; };
 		4E0DCC7222C5110300C0342C /* ReadingArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0DCC7122C5110300C0342C /* ReadingArticleCell.swift */; };
 		4E17B02122BE344E0086B2C5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4E17B02322BE344E0086B2C5 /* Localizable.strings */; };
 		4E17B02622BE35360086B2C5 /* Localizeble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E17B02522BE35360086B2C5 /* Localizeble.swift */; };
@@ -90,6 +90,7 @@
 		1A311EC722C4B53B004482C1 /* ReadingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingController.swift; sourceTree = "<group>"; };
 		1A311EC922C4B569004482C1 /* ReadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingViewModel.swift; sourceTree = "<group>"; };
 		1A311ECB22C4B6BD004482C1 /* ReadingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingItemCell.swift; sourceTree = "<group>"; };
+		1A311ECF22C58F75004482C1 /* ReadingArticleSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingArticleSectionType.swift; sourceTree = "<group>"; };
 		1A7ABDC922C0AFD60017AA5F /* WelfareController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelfareController.swift; sourceTree = "<group>"; };
 		1A7ABDCB22C0AFE70017AA5F /* WelfareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelfareViewModel.swift; sourceTree = "<group>"; };
 		1A7ABDCD22C0B2F10017AA5F /* WelfareItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelfareItemCell.swift; sourceTree = "<group>"; };
@@ -99,7 +100,6 @@
 		2F2221A38E1E6D13E9BBC2F2 /* Pods-GankIO-MVVMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GankIO-MVVMUITests.debug.xcconfig"; path = "Target Support Files/Pods-GankIO-MVVMUITests/Pods-GankIO-MVVMUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4E0DCC6B22C50CAF00C0342C /* ReadingArticleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingArticleController.swift; sourceTree = "<group>"; };
 		4E0DCC6D22C50CEE00C0342C /* ReadingArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingArticleViewModel.swift; sourceTree = "<group>"; };
-		4E0DCC6F22C50EA300C0342C /* ReadingArtitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingArtitleModel.swift; sourceTree = "<group>"; };
 		4E0DCC7122C5110300C0342C /* ReadingArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingArticleCell.swift; sourceTree = "<group>"; };
 		4E17B02222BE344E0086B2C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4E17B02422BE34550086B2C5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
@@ -194,6 +194,7 @@
 				4E0DCC6B22C50CAF00C0342C /* ReadingArticleController.swift */,
 				4E0DCC6D22C50CEE00C0342C /* ReadingArticleViewModel.swift */,
 				4E0DCC7122C5110300C0342C /* ReadingArticleCell.swift */,
+				1A311ECF22C58F75004482C1 /* ReadingArticleSectionType.swift */,
 			);
 			path = Reading;
 			sourceTree = "<group>";
@@ -313,7 +314,6 @@
 				4E20A41B22BCFEC4007AA9C1 /* ReadingFeedModel.swift */,
 				4E20A41D22BCFEC4007AA9C1 /* ReadingSubCategoryModel.swift */,
 				1A7ABDD122C0C2AD0017AA5F /* CategoryDataModel.swift */,
-				4E0DCC6F22C50EA300C0342C /* ReadingArtitleModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -750,6 +750,7 @@
 			files = (
 				4E7D60DC22BBC0D0001AE0AD /* TodayViewModel.swift in Sources */,
 				4E0DCC7222C5110300C0342C /* ReadingArticleCell.swift in Sources */,
+				1A311ED022C58F75004482C1 /* ReadingArticleSectionType.swift in Sources */,
 				4E20A41F22BCFEC4007AA9C1 /* OneDayModel.swift in Sources */,
 				4E17B03722BE5F040086B2C5 /* TodaySectionType.swift in Sources */,
 				4E17B02622BE35360086B2C5 /* Localizeble.swift in Sources */,
@@ -771,7 +772,6 @@
 				4E17B02F22BE4F160086B2C5 /* Constants.swift in Sources */,
 				4E0DCC6E22C50CEE00C0342C /* ReadingArticleViewModel.swift in Sources */,
 				1A7ABDD222C0C2AD0017AA5F /* CategoryDataModel.swift in Sources */,
-				4E0DCC7022C50EA300C0342C /* ReadingArtitleModel.swift in Sources */,
 				4E7D60DB22BBC0D0001AE0AD /* TodayController.swift in Sources */,
 				4E17B02D22BE4C2D0086B2C5 /* TableViewCell.swift in Sources */,
 				4E7D60E022BBC0F2001AE0AD /* ErrorResponse.swift in Sources */,
