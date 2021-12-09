@@ -6,6 +6,10 @@ on:
         description: 'Input which branch to build (develop/main/hotfix)'
         required: true
         default: 'develop'
+      uploadCloud:
+        description: 'Upload apk to Pgyer (true/false)'
+        required: true
+        default: 'true'
 
 env: 
   APPLEID_USERNAME: ${{ secrets.APPLE_ID }}
@@ -14,11 +18,10 @@ env:
   IOS_KEYS: ${{ secrets.IOS_KEYS }}
 
 jobs:
-  deploy:
-    name: Deploying to Testflight
+  build-ios-test:
     runs-on: macOS-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
@@ -27,9 +30,9 @@ jobs:
       - name: Install pod
         run: |
           pod install --repo-update --clean-install
-          
+
       - name: Cache Cocoapods
-      - uses: actions/cache@v1
+      - uses: actions/cache@v2
         with:
           path: Pods
           key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
