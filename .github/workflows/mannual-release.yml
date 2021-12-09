@@ -1,0 +1,79 @@
+name: iOS Test Build
+on:
+   workflow_dispatch:
+    inputs:
+      buildBranch:
+        description: 'Input which branch to build (develop/main/hotfix)'
+        required: true
+        default: 'develop'
+
+env: 
+  APPLEID_USERNAME: ${{ secrets.APPLE_ID }}
+  APPLEID_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
+  XC_PROJECT: "GankIO-MVVM"
+  IOS_KEYS: ${{ secrets.IOS_KEYS }}
+
+jobs:
+  deploy:
+    name: Deploying to Testflight
+    runs-on: macOS-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.inputs.buildBranch }}
+
+      - name Install pod
+        run: |
+          pod install --repo-update --clean-install
+      - uses: actions/cache@v1
+        with:
+          path: Pods
+          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pods-
+      
+      - name: Install gpg
+        run: brew install gnupg
+
+      - name: Setup provisioning profile
+        run: |
+          gpg --quiet --batch --yes --decrypt --passphrase="$IOS_KEYS" --output ./.github/secrets/gank.mobileprovision ./.github/secrets/gank.mobileprovision.gpg
+          gpg --quiet --batch --yes --decrypt --passphrase="$IOS_KEYS" --output ./.github/secrets/gank.p12 ./.github/secrets/gank.p12.gpg
+
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+
+          cp ./.github/secrets/gank.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/gank.mobileprovision
+
+
+          security create-keychain -p "" build.keychain
+          security import ./.github/secrets/gank.p12 -t agg -k ~/Library/Keychains/build.keychain -P "" -A
+
+          security list-keychains -s ~/Library/Keychains/build.keychain
+          security default-keychain -s ~/Library/Keychains/build.keychain
+          security unlock-keychain -p "" ~/Library/Keychains/build.keychain
+
+          security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/build.keychain
+
+      - name: Archive App
+        run: |
+          xcodebuild -workspace $XC_PROJECT.xcworkspace \
+            -scheme $XC_PROJECT\ iOS \
+            -sdk iphoneos \
+            -configuration AppStoreDistribution \
+            -archivePath $PWD/build/$XC_PROJECT.xcarchive \
+            clean archive | xcpretty
+
+      - name: Export IPA
+        run: |
+          xcodebuild -archivePath $PWD/build/$XC_PROJECT.xcarchive \
+            -exportOptionsPlist $XC_PROJECT-iOS/$XC_PROJECT\ iOS/exportOptions.plist \
+            -exportPath $PWD/build \
+            -allowProvisioningUpdates \
+            -exportArchive | xcpretty
+
+      -name: Publish To TestFlight
+        if: success()
+        run: |
+          xcrun altool --upload-app -t ios -f build/$XC_PROJECT\ iOS.ipa -u "$APPLEID_USERNAME" -p "$APPLEID_PASSWORD" --verbose
