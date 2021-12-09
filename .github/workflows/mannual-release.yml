@@ -24,9 +24,11 @@ jobs:
           fetch-depth: 0
           ref: ${{ github.event.inputs.buildBranch }}
 
-      - name Install pod
+      - name: Install pod
         run: |
           pod install --repo-update --clean-install
+          
+      - name: Cache Cocoapods
       - uses: actions/cache@v1
         with:
           path: Pods
