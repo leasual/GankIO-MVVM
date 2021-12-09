@@ -49,7 +49,7 @@ jobs:
         run: |
           gpg --quiet --batch --yes --decrypt --passphrase="$IOS_KEYS" --output .github/secrets/gank.mobileprovision .github/secrets/gank.mobileprovision.gpg
           gpg --quiet --batch --yes --decrypt --passphrase="$IOS_KEYS" --output .github/secrets/gank.p12 .github/secrets/gank.p12.gpg
-
+          ls -l
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 
           cp .github/secrets/gank.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/gank.mobileprovision
