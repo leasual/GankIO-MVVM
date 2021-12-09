@@ -52,7 +52,7 @@ jobs:
           ls -l
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 
-          cp .github/secrets/gank.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/match\ AppStore\ com.geekdroid.gankio.mobileprovision
+          cp .github/secrets/gank.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/dan_release.mobileprovision
 
 
           security create-keychain -p "123456" build.keychain
