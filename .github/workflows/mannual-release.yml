@@ -66,6 +66,7 @@ jobs:
 
       - name: Archive App
         run: |
+          ls -l
           xcodebuild -workspace $XC_PROJECT.xcworkspace \
             -scheme $XC_PROJECT \
             -sdk iphoneos \
@@ -73,10 +74,11 @@ jobs:
             -archivePath $PWD/build/$XC_PROJECT.xcarchive \
             clean archive | xcpretty
 
+      #/usr/bin/xcodebuild -exportArchive -archivePath "$ARCHIVE_PATH" -exportOptionsPlist "$SRCROOT/ExportOptions.plist" -exportPath "$EXPORT_PATH"
       - name: Export IPA
         run: |
           xcodebuild -archivePath $PWD/build/$XC_PROJECT.xcarchive \
-            -exportOptionsPlist $XC_PROJECT/$XC_PROJECT/exportOptions.plist \
+            -exportOptionsPlist $XC_PROJECT/exportOptions.plist \
             -exportPath $PWD/build \
             -allowProvisioningUpdates \
             -exportArchive | xcpretty
