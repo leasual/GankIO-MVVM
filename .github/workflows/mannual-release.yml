@@ -42,7 +42,8 @@ jobs:
             ${{ runner.os }}-pods-
       
       - name: Install gpg
-        run: brew install gnupg
+        run: |
+          brew install gnupg
 
       - name: Setup provisioning profile
         run: |
