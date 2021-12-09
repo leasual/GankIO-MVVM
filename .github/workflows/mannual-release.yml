@@ -55,14 +55,14 @@ jobs:
           cp .github/secrets/gank.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/gank.mobileprovision
 
 
-          security create-keychain -p "" build.keychain
-          security import .github/secrets/gank.p12 -t agg -k ~/Library/Keychains/build.keychain -P "" -A
+          security create-keychain -p "123456" build.keychain
+          security import .github/secrets/gank.p12 -t agg -k ~/Library/Keychains/build.keychain -P "123456" -A
 
           security list-keychains -s ~/Library/Keychains/build.keychain
           security default-keychain -s ~/Library/Keychains/build.keychain
           security unlock-keychain -p "" ~/Library/Keychains/build.keychain
 
-          security set-key-partition-list -S apple-tool:,apple: -s -k "" ~/Library/Keychains/build.keychain
+          security set-key-partition-list -S apple-tool:,apple: -s -k "123456" ~/Library/Keychains/build.keychain
 
       - name: Archive App
         run: |
