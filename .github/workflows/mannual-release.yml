@@ -33,13 +33,13 @@ jobs:
         run: |
           pod install --repo-update --clean-install
 
-      - name: Cache Cocoapods
-      - uses: actions/cache@v2
-        with:
-          path: Pods
-          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-pods-
+      # - name: Cache Cocoapods
+      # - uses: actions/cache@v2
+      #   with:
+      #     path: Pods
+      #     key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-pods-
       
       - name: Install gpg
         run: |
