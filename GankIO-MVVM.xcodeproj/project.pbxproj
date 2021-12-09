@@ -964,8 +964,9 @@
 			baseConfigurationReference = F8D5D92FF456D3DD3D20FEBD /* Pods-GankIO-MVVM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M9BR556FWG;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = AV9B6VYBLZ;
 				INFOPLIST_FILE = "GankIO-MVVM/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -974,6 +975,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.geekdroid.gankio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.geekdroid.gankio";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -984,8 +986,9 @@
 			baseConfigurationReference = 51E47C4EB11A87CAAA76931A /* Pods-GankIO-MVVM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = M9BR556FWG;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = AV9B6VYBLZ;
 				INFOPLIST_FILE = "GankIO-MVVM/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -994,6 +997,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.geekdroid.gankio;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.geekdroid.gankio";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

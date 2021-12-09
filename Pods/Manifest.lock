@@ -90,7 +90,7 @@ DEPENDENCIES:
   - Then
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - ATGMediaBrowser
     - CBFlashyTabBarController
@@ -160,4 +160,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 23fce153d2a7e22d89619fc38f115f1fdf0ee222
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.10.1
