@@ -41,9 +41,9 @@ struct DependencyContainer {
         container.register(WelfareController.self) { resolver in
             WelfareController(viewModel: resolver.resolve(WelfareViewModel.self)!)
         }
-        //MARK: WebViewController
-        container.register(WebViewController.self) { _ in WebViewController()}
-        
+//        //MARK: WebViewController
+//        container.register(WebViewController.self) { _ in WebViewController()}
+//        
         //MARK: ReadingController
         container.register(APIService.self) { _ in APIService(gankIOAPIProvider: GankIOProvider) }
         container.register(ReadingViewModel.self) { resolver in

@@ -46,10 +46,10 @@ class ReadingArticleController: ViewController<ReadingArticleViewModel> {
         tableView.rx.modelSelected(ReadingArticleSectionItem.self).subscribe(onNext: { model in
             switch(model) {
             case .SectionItem(let model):
-                let controller = DependencyContainer.resolve(WebViewController.self)
-                controller.model = model.url
+//                let controller = DependencyContainer.resolve(WebViewController.self)
+//                controller.model = model.url
                 //controller.type = 1
-                self.navigationController?.pushViewController(controller, animated: true)
+//                self.navigationController?.pushViewController(controller, animated: true)
                 break
             case .TitleSectionItem:
                 break

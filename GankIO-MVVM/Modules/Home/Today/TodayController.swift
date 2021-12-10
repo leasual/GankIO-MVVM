@@ -64,9 +64,9 @@ class TodayController: ViewController<TodayViewModel> {
                 guard let url = model.url, !url.isEmpty else  {
                     return
                 }
-                let detailVC = DependencyContainer.resolve(WebViewController.self)
-                detailVC.model = url
-                self.navigationController?.pushViewController(detailVC, animated: true)
+//                let detailVC = DependencyContainer.resolve(WebViewController.self)
+//                detailVC.model = url
+//                self.navigationController?.pushViewController(detailVC, animated: true)
                 break
             case .TitleSectionItem:
                 break
