@@ -78,7 +78,7 @@ jobs:
       - name: Export IPA
         run: |
           xcodebuild -archivePath $PWD/build/$XC_PROJECT.xcarchive \
-            -exportOptionsPlist $XC_PROJECT/exportOptions.plist \
+            -exportOptionsPlist $XC_PROJECT/ExportOptions.plist \
             -exportPath $PWD/build \
             -allowProvisioningUpdates \
             -exportArchive | xcpretty
