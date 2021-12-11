@@ -43,7 +43,7 @@ jobs:
           url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/${{ github.event.inputs.buildBranch }}/CHANGELOG.md"
           echo "::set-output name=changelog_url::$url"
           echo "::set-output name=branch::${{ github.event.inputs.buildBranch }}"
-          plist_path="${{ github.workspace }}/${GITHUB_REPOSITORY}/Info.plist"
+          plist_path="${{ github.workspace }}/${{ github.event.repository.name }}/Info.plist"
           echo "::set-output name=info_plist_path::$plist_path"
 
       - name: Update Info.plist
