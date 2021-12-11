@@ -49,14 +49,18 @@ jobs:
           build_number_path="${{ github.workspace }}/buildNumber.txt"
           ls -l
 
-      - name: Upload info plist and build number
+      - name: Upload info plist
         uses: actions/upload-artifact@v2
         with:
           name: Info
           path: |
-            - ${{ steps.variable.outputs.info_plist_path }}
-            - ${{ steps.variable.outputs.build_number_path }}
-
+            ${{ steps.variable.outputs.info_plist_path }}
+      - name: Upload build number
+        uses: actions/upload-artifact@v2
+        with:
+          name: BuildNumber
+          path: |
+            ${{ steps.variable.outputs.build_number_path }}
       # - name: Update Info.plist
       #   uses: damienaicheh/update-ios-version-info-plist-action@v1.0.0
       #   with:
@@ -147,10 +151,15 @@ jobs:
           echo "::set-output name=changelog_url::$url"
           echo "::set-output name=branch::${{ github.event.inputs.buildBranch }}"
 
-      - name: Download info plist and build number
+      - name: Download info plist
         uses: actions/download-artifact@v2
         with:
           name: Info
+      
+      - name: Download build number
+        uses: actions/download-artifact@v2
+        with:
+          name: BuildNumber
 
       - name: Get commit id and message
         id: lastest_commit
