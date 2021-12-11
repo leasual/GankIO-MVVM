@@ -154,7 +154,7 @@ jobs:
           cat buildNumber.txt
           build_number="$(cat buildNumber.txt)"
           echo "::set-output name=number::$build_number"
-          git tag ${{ github.event.inputs.buildVersionOrTag }}
+          
       # - name: Bump tag version
       #   id: tag
       #   uses: mathieudutour/github-tag-action@v5.6
@@ -168,7 +168,7 @@ jobs:
         uses: orhun/git-cliff-action@v1
         with:
           config: .github/cliff.toml
-          args: --verbose --tag ${{ github.event.inputs.buildVersionOrTag }}
+          args: --verbose --tag ${{ github.event.inputs.buildVersionOrTag }} --prepend CHANGELOG.md
         env:
           OUTPUT: CHANGELOG.md 
 
