@@ -42,13 +42,13 @@ jobs:
           plist_path="${{ github.workspace }}/${{ github.event.repository.name }}/Info.plist"
           echo "::set-output name=info_plist_path::$plist_path"
 
-      # - name: Update Info.plist
-      #   uses: damienaicheh/update-ios-version-info-plist-action@v1.0.0
-      #   with:
-      #     info-plist-path: ${{ steps.variable.outputs.info_plist_path }}
-      #     bundle-short-version-string: ${{ github.event.inputs.buildVersionOrTag }}
-      #     bundle-version: ${{ steps.variable.outputs.code }}
-      #     print-file: true
+      - name: Update Info.plist
+        uses: damienaicheh/update-ios-version-info-plist-action@v1.0.0
+        with:
+          info-plist-path: ${{ steps.variable.outputs.info_plist_path }}
+          # bundle-short-version-string: #${{ github.event.inputs.buildVersionOrTag }}
+          bundle-version: ${{ steps.variable.outputs.code }}
+          print-file: true
 
       # - name: Install pod
       #   run: |
@@ -109,97 +109,97 @@ jobs:
       #   run: |
       #     xcrun altool --upload-app -t ios -f build/$XC_PROJECT.ipa -u "$APPLEID_USERNAME" -p "$APPLEID_PASSWORD" --verbose
 
-  update-changelog:
-    needs: build-ios-test
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
+  # update-changelog:
+  #   needs: build-ios-test
+  #   runs-on: ubuntu-latest
+  #   timeout-minutes: 10
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-          ref: ${{ github.event.inputs.buildBranch }}
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
+  #       with:
+  #         fetch-depth: 0
+  #         ref: ${{ github.event.inputs.buildBranch }}
 
-      - name: Prepear variable for changelog
-        id: variable
-        env:
-          NUM: ${{ github.run_number }}
-        run: |
-          echo "::set-output name=code::$NUM"
-          echo "::set-output name=date::$(date +'%Y-%m-%dT%H:%M')"
-          url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/${{ github.event.inputs.buildBranch }}/CHANGELOG.md"
-          echo "::set-output name=changelog_url::$url"
-          echo "::set-output name=branch::${{ github.event.inputs.buildBranch }}"
+  #     - name: Prepear variable for changelog
+  #       id: variable
+  #       env:
+  #         NUM: ${{ github.run_number }}
+  #       run: |
+  #         echo "::set-output name=code::$NUM"
+  #         echo "::set-output name=date::$(date +'%Y-%m-%dT%H:%M')"
+  #         url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/${{ github.event.inputs.buildBranch }}/CHANGELOG.md"
+  #         echo "::set-output name=changelog_url::$url"
+  #         echo "::set-output name=branch::${{ github.event.inputs.buildBranch }}"
 
-      - name: Get commit id and message
-        id: lastest_commit
-        run: |
-          ls -l
-          echo "name=${{ github.event.repository.name }}"
-          echo "name=${{ github.event.repository.full_name }}"
-          lastest_commit_message="$(git log -1 --format=%B)"
-          lastest_commit_id="$(git log -1 --format=%H)"
-          init_commit_id="$(git rev-list --max-parents=0 HEAD)"
-          if [ ! -f release-last-commit.md ]
-          then
-            touch release-last-commit.md
-            last_commit_id=$init_commit_id
-          else
-            last_commit_id="$(cat release-last-commit.txt)"
-          fi
-          echo "::set-output name=message::$lastest_commit_message"
-          echo "::set-output name=id::$lastest_commit_id"
-          echo "::set-output name=init_id::$init_commit_id"
-          echo "::set-output name=last_id::$last_commit_id"
-      - shell: bash
-        run: |
-          echo "${{ steps.lastest_commit.outputs.id }}"
-          expr ${{ steps.lastest_commit.outputs.id }} > release-last-commit.txt
-      - name: Backup changelog
-        if: hashFiles('CHANGELOG.md') != ''
-        run: |
-          mv CHANGELOG.md CHANGELOG_backup.md
-      - name: Generate a changelog without header and footer
-        if: hashFiles('CHANGELOG_backup.md') != ''
-        uses: orhun/git-cliff-action@v1
-        with:
-          config: .github/cliff.toml
-          args: --verbose ${{ steps.lastest_commit.outputs.last_id }}..HEAD --tag ${{ github.event.inputs.buildVersionOrTag }}-beta --strip header
-        env:
-          OUTPUT: CHANGELOG_commit.md
+  #     - name: Get commit id and message
+  #       id: lastest_commit
+  #       run: |
+  #         ls -l
+  #         echo "name=${{ github.event.repository.name }}"
+  #         echo "name=${{ github.event.repository.full_name }}"
+  #         lastest_commit_message="$(git log -1 --format=%B)"
+  #         lastest_commit_id="$(git log -1 --format=%H)"
+  #         init_commit_id="$(git rev-list --max-parents=0 HEAD)"
+  #         if [ ! -f release-last-commit.md ]
+  #         then
+  #           touch release-last-commit.md
+  #           last_commit_id=$init_commit_id
+  #         else
+  #           last_commit_id="$(cat release-last-commit.txt)"
+  #         fi
+  #         echo "::set-output name=message::$lastest_commit_message"
+  #         echo "::set-output name=id::$lastest_commit_id"
+  #         echo "::set-output name=init_id::$init_commit_id"
+  #         echo "::set-output name=last_id::$last_commit_id"
+  #     - shell: bash
+  #       run: |
+  #         echo "${{ steps.lastest_commit.outputs.id }}"
+  #         expr ${{ steps.lastest_commit.outputs.id }} > release-last-commit.txt
+  #     - name: Backup changelog
+  #       if: hashFiles('CHANGELOG.md') != ''
+  #       run: |
+  #         mv CHANGELOG.md CHANGELOG_backup.md
+  #     - name: Generate a changelog without header and footer
+  #       if: hashFiles('CHANGELOG_backup.md') != ''
+  #       uses: orhun/git-cliff-action@v1
+  #       with:
+  #         config: .github/cliff.toml
+  #         args: --verbose ${{ steps.lastest_commit.outputs.last_id }}..HEAD --tag ${{ github.event.inputs.buildVersionOrTag }}-beta --strip header
+  #       env:
+  #         OUTPUT: CHANGELOG_commit.md
 
-      - name: Append history changelog
-        if: hashFiles('CHANGELOG_backup.md') != ''
-        run: |
-          sed '3r CHANGELOG_commit.md' CHANGELOG_backup.md > CHANGELOG_lastest.md
-          rm CHANGELOG_backup.md CHANGELOG_commit.md
-          mv CHANGELOG_lastest.md CHANGELOG.md
-          echo "$(cat CHANGELOG.md)"
+  #     - name: Append history changelog
+  #       if: hashFiles('CHANGELOG_backup.md') != ''
+  #       run: |
+  #         sed '3r CHANGELOG_commit.md' CHANGELOG_backup.md > CHANGELOG_lastest.md
+  #         rm CHANGELOG_backup.md CHANGELOG_commit.md
+  #         mv CHANGELOG_lastest.md CHANGELOG.md
+  #         echo "$(cat CHANGELOG.md)"
       
-      - name: Generate a changelog with header and footer
-        if: hashFiles('CHANGELOG.md') == ''
-        uses: orhun/git-cliff-action@v1
-        with:
-          config: .github/cliff.toml
-          args: --verbose ${{ steps.lastest_commit.outputs.last_id }}..HEAD --tag ${{ github.event.inputs.buildVersionOrTag }}-beta
-        env:
-          OUTPUT: CHANGELOG.md 
+  #     - name: Generate a changelog with header and footer
+  #       if: hashFiles('CHANGELOG.md') == ''
+  #       uses: orhun/git-cliff-action@v1
+  #       with:
+  #         config: .github/cliff.toml
+  #         args: --verbose ${{ steps.lastest_commit.outputs.last_id }}..HEAD --tag ${{ github.event.inputs.buildVersionOrTag }}-beta
+  #       env:
+  #         OUTPUT: CHANGELOG.md 
 
-      - uses: EndBug/add-and-commit@v7
-        with:
-          message: "ci: update changelog to ${{ github.event.inputs.buildVersionOrTag }}-beta"
-          default_author: github_actions
-          branch: ${{ github.event.inputs.buildBranch }}
-          add: 'release-last-commit.txt CHANGELOG.md'
-          # tag: '${{ github.event.inputs.buildVersionOrTag }} --force'
+  #     - uses: EndBug/add-and-commit@v7
+  #       with:
+  #         message: "ci: update changelog to ${{ github.event.inputs.buildVersionOrTag }}-beta"
+  #         default_author: github_actions
+  #         branch: ${{ github.event.inputs.buildBranch }}
+  #         add: 'release-last-commit.txt CHANGELOG.md'
+  #         # tag: '${{ github.event.inputs.buildVersionOrTag }} --force'
 
-      #{"msgtype": "markdown","markdown": {"content": "Application daily build update:\n>Project:<font color=\"comment\">Project</font>>Branch:<font color=\"comment\">Branch</font>>Build Status:<font color=\"warning\">Success</font>\n>Platform:<font color=\"comment\">Platform</font>\n>Version:<font color=\"comment\">Version</font>\n>Changelog Url:<font color=\"comment\">Changelog</font>\n>Download Url:<font color=\"comment\">Download</font>\n>When:<font color=\"comment\">When</font>", "mentioned_list":["@all"]}}
-      - name: On success to send notification to wechat
-        if: success()
-        run: |
-          curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${{ secrets.WECHAT_NOTIFICATION_KEY }}' -H 'Content-Type: application/json' -d "{\"msgtype\": \"markdown\",\"markdown\": {\"content\": \"Application daily build update:\\n>Project:<font color=\\\"warning\\\">${{ github.event.repository.name }}</font>\\n>Branch:<font color=\\\"warning\\\">${{ steps.variable.outputs.branch }}</font>\\n>Build Status:<font color=\\\"warning\\\">Success</font>\\n>Platform:<font color=\\\"warning\\\">iOS</font>\\n>Version:<font color=\\\"warning\\\">${{ github.event.inputs.buildVersionOrTag }}(${{ steps.variable.outputs.code }})</font>\\n>Changelog Url:<font color=\\\"comment\\\">[click this](${{ steps.variable.outputs.changelog_url }})</font>\\n>Download Url:<font color=\\\"comment\\\">[click this](https://www.pgyer.com/uoud)</font>\\n>When:<font color=\\\"warning\\\">${{ steps.variable.outputs.date }}</font>\", \"mentioned_list\":[\"@all\"]}}"
-      - name: On failure to send notification to wechat
-        if: failure()
-        run: |
-          curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${{ secrets.WECHAT_NOTIFICATION_KEY }}' -H 'Content-Type: application/json' -d "{\"msgtype\": \"markdown\",\"markdown\": {\"content\": \"Application daily build update:\\n>Project:<font color=\\\"warning\\\">${{ github.event.repository.name }}</font>\\n>Branch:<font color=\\\"warning\\\">${{ steps.variable.outputs.branch }}</font>\\n>Build Status:<font color=\\\"warning\\\">Faiure</font>\\n>Platform:<font color=\\\"warning\\\">iOS</font>\\n>Version:<font color=\\\"warning\\\">${{ github.event.inputs.buildVersionOrTag }}(${{ steps.variable.outputs.code }})</font>\\n>Changelog Url:<font color=\\\"comment\\\">[click this](${{ steps.variable.outputs.changelog_url }})</font>\\n>Download Url:<font color=\\\"comment\\\">[click this](https://www.pgyer.com/uoud)</font>\\n>When:<font color=\\\"warning\\\">${{ steps.variable.outputs.date }}</font>\", \"mentioned_list\":[\"@all\"]}}"
+  #     #{"msgtype": "markdown","markdown": {"content": "Application daily build update:\n>Project:<font color=\"comment\">Project</font>>Branch:<font color=\"comment\">Branch</font>>Build Status:<font color=\"warning\">Success</font>\n>Platform:<font color=\"comment\">Platform</font>\n>Version:<font color=\"comment\">Version</font>\n>Changelog Url:<font color=\"comment\">Changelog</font>\n>Download Url:<font color=\"comment\">Download</font>\n>When:<font color=\"comment\">When</font>", "mentioned_list":["@all"]}}
+  #     - name: On success to send notification to wechat
+  #       if: success()
+  #       run: |
+  #         curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${{ secrets.WECHAT_NOTIFICATION_KEY }}' -H 'Content-Type: application/json' -d "{\"msgtype\": \"markdown\",\"markdown\": {\"content\": \"Application daily build update:\\n>Project:<font color=\\\"warning\\\">${{ github.event.repository.name }}</font>\\n>Branch:<font color=\\\"warning\\\">${{ steps.variable.outputs.branch }}</font>\\n>Build Status:<font color=\\\"warning\\\">Success</font>\\n>Platform:<font color=\\\"warning\\\">iOS</font>\\n>Version:<font color=\\\"warning\\\">${{ github.event.inputs.buildVersionOrTag }}(${{ steps.variable.outputs.code }})</font>\\n>Changelog Url:<font color=\\\"comment\\\">[click this](${{ steps.variable.outputs.changelog_url }})</font>\\n>Download Url:<font color=\\\"comment\\\">[click this](https://www.pgyer.com/uoud)</font>\\n>When:<font color=\\\"warning\\\">${{ steps.variable.outputs.date }}</font>\", \"mentioned_list\":[\"@all\"]}}"
+  #     - name: On failure to send notification to wechat
+  #       if: failure()
+  #       run: |
+  #         curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${{ secrets.WECHAT_NOTIFICATION_KEY }}' -H 'Content-Type: application/json' -d "{\"msgtype\": \"markdown\",\"markdown\": {\"content\": \"Application daily build update:\\n>Project:<font color=\\\"warning\\\">${{ github.event.repository.name }}</font>\\n>Branch:<font color=\\\"warning\\\">${{ steps.variable.outputs.branch }}</font>\\n>Build Status:<font color=\\\"warning\\\">Faiure</font>\\n>Platform:<font color=\\\"warning\\\">iOS</font>\\n>Version:<font color=\\\"warning\\\">${{ github.event.inputs.buildVersionOrTag }}(${{ steps.variable.outputs.code }})</font>\\n>Changelog Url:<font color=\\\"comment\\\">[click this](${{ steps.variable.outputs.changelog_url }})</font>\\n>Download Url:<font color=\\\"comment\\\">[click this](https://www.pgyer.com/uoud)</font>\\n>When:<font color=\\\"warning\\\">${{ steps.variable.outputs.date }}</font>\", \"mentioned_list\":[\"@all\"]}}"
