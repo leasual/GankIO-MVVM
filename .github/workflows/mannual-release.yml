@@ -5,7 +5,7 @@ on:
       buildBranch:
         description: 'Input which branch to build (develop/main/hotfix)'
         required: true
-        default: 'develop'
+        default: 'main'
       buildVersionOrTag:
         description: 'Specify version only when you want to increment the minor and major version (e.g. 1.0.0)'
         required: true
@@ -45,11 +45,12 @@ jobs:
           build_number=$((${build_number} + 1))
           /usr/libexec/PlistBuddy -c "Set CFBundleVersion ${build_number}" ${plist_path}
           expr $build_number > build-number.txt
+
       - name: Upload build number
-          uses: actions/upload-artifact@v2
-          with:
-            name: Info
-            path: $plist_path
+        uses: actions/upload-artifact@v2
+        with:
+          name: Info
+          path: $plist_path
 
 
       # - name: Update Info.plist
