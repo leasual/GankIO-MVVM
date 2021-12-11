@@ -32,7 +32,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Prepear variable for build
+      - name: Prepare variable for build
         id: variable
         env:
           NUM: ${{ github.run_number }}
@@ -42,6 +42,7 @@ jobs:
           echo "::set-output name=info_plist_path::$plist_path"
           build_number=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" ${plist_path})
           build_number=$((${build_number} + 1))
+          /usr/libexec/PlistBuddy -c "Set CFBundleVersion $build_number" ${plist_path}
           build_version=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" ${plist_path})
           /usr/libexec/PlistBuddy -c "Set CFBundleShortVersionString ${{ github.event.inputs.buildVersionOrTag }}" ${plist_path}
           expr $build_number > buildNumber.txt
@@ -151,6 +152,7 @@ jobs:
         run: |
           ls -l
           cat buildNumber.txt
+          
           build_number="$(cat buildNumber.txt)"
           echo "::set-output name=number::$build_number"
       
@@ -159,7 +161,7 @@ jobs:
         uses: orhun/git-cliff-action@v1
         with:
           config: .github/cliff.toml
-          args: --tag ${{ github.event.inputs.buildVersionOrTag }} --prepend CHANGELOG.md
+          args: --latest --tag ${{ github.event.inputs.buildVersionOrTag }} --prepend CHANGELOG.md
         env:
           OUTPUT: CHANGELOG.md 
 
