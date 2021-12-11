@@ -168,7 +168,6 @@ jobs:
         run: |
           ls -l
           cat buildNumber.txt
-          ls ${{ github.event.repository.name }}
           echo "name=${{ github.event.repository.name }}"
           echo "name=${{ github.event.repository.full_name }}"
           lastest_commit_message="$(git log -1 --format=%B)"
@@ -186,7 +185,7 @@ jobs:
           echo "::set-output name=init_id::$init_commit_id"
           echo "::set-output name=last_id::$last_commit_id"
           build_number="$(cat buildNumber.txt)"
-          echo "::set-output number=last_id::$build_number"
+          echo "::set-output name=number::$build_number"
       - shell: bash
         run: |
           echo "${{ steps.lastest_commit.outputs.id }}"
