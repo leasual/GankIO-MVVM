@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [1.0.4] - 2021-12-11
+## [1.0.5] - 2021-12-11
 
 ### Bug Fixes
 
@@ -60,6 +60,7 @@ All notable changes to this project will be documented in this file.
 ### Documentation
 
 - Update document.
+- Update changlog.
 
 ### Features
 
