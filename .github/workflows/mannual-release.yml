@@ -167,10 +167,8 @@ jobs:
         id: lastest_commit
         run: |
           ls -l
-          cat Info.plist
           cat buildNumber.txt
-          mv Info.plist ${{ github.event.repository.name }}
-          ls -l
+          ls ${{ github.event.repository.name }}
           echo "name=${{ github.event.repository.name }}"
           echo "name=${{ github.event.repository.full_name }}"
           lastest_commit_message="$(git log -1 --format=%B)"
