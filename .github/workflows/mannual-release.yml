@@ -18,7 +18,7 @@ on:
 env: 
   APPLEID_USERNAME: ${{ secrets.APPLE_ID }}
   APPLEID_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
-  XC_PROJECT: ${GITHUB_REPOSITORY}
+  XC_PROJECT: "GankIO-MVVM"
   IOS_KEYS: ${{ secrets.IOS_KEYS }}
 
 jobs:
@@ -47,7 +47,7 @@ jobs:
       - name: Update Info.plist
         uses: damienaicheh/update-ios-version-info-plist-action@v1.0.0
         with:
-          info-plist-path: '${{ github.workspace }}/$XC_PROJECT/Info.plist'
+          info-plist-path: '${{ github.workspace }}/${GITHUB_REPOSITORY}/Info.plist'
           bundle-short-version-string: ${{ github.event.inputs.buildVersionOrTag }}
           bundle-version: ${{ steps.variable.outputs.code }}
           print-file: true
@@ -171,8 +171,8 @@ jobs:
       - name: On success to send notification to wechat
         if: success()
         run: |
-          curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${{ secrets.WECHAT_NOTIFICATION_KEY }}' -H 'Content-Type: application/json' -d "{\"msgtype\": \"markdown\",\"markdown\": {\"content\": \"Application daily build update:\\n>Project:<font color=\\\"comment\\\">${{ github.event.repository.name }}</font>\\n>Branch:<font color=\\\"comment\\\">${{ steps.variable.outputs.branch }}</font>\\n>Build Status:<font color=\\\"warning\\\">Success</font>\\n>Platform:<font color=\\\"comment\\\">Android</font>\\n>Version:<font color=\\\"comment\\\">${{ github.event.inputs.buildVersionOrTag }}(${{ steps.variable.outputs.code }})</font>\\n>Changelog Url:<font color=\\\"comment\\\">[click this](${{ steps.variable.outputs.changelog_url }})</font>\\n>Download Url:<font color=\\\"comment\\\">[click this](https://www.pgyer.com/uoud)</font>\\n>When:<font color=\\\"comment\\\">${{ steps.variable.outputs.date }}</font>\", \"mentioned_list\":[\"@all\"]}}"
+          curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${{ secrets.WECHAT_NOTIFICATION_KEY }}' -H 'Content-Type: application/json' -d "{\"msgtype\": \"markdown\",\"markdown\": {\"content\": \"Application daily build update:\\n>Project:<font color=\\\"warning\\\">${{ github.event.repository.name }}</font>\\n>Branch:<font color=\\\"warning\\\">${{ steps.variable.outputs.branch }}</font>\\n>Build Status:<font color=\\\"warning\\\">Success</font>\\n>Platform:<font color=\\\"warning\\\">iOS</font>\\n>Version:<font color=\\\"warning\\\">${{ github.event.inputs.buildVersionOrTag }}(${{ steps.variable.outputs.code }})</font>\\n>Changelog Url:<font color=\\\"comment\\\">[click this](${{ steps.variable.outputs.changelog_url }})</font>\\n>Download Url:<font color=\\\"comment\\\">[click this](https://www.pgyer.com/uoud)</font>\\n>When:<font color=\\\"warning\\\">${{ steps.variable.outputs.date }}</font>\", \"mentioned_list\":[\"@all\"]}}"
       - name: On failure to send notification to wechat
         if: failure()
         run: |
-          curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${{ secrets.WECHAT_NOTIFICATION_KEY }}' -H 'Content-Type: application/json' -d "{\"msgtype\": \"markdown\",\"markdown\": {\"content\": \"Application daily build update:\\n>Project:<font color=\\\"comment\\\">${{ github.event.repository.name }}</font>\\n>Branch:<font color=\\\"comment\\\">${{ steps.variable.outputs.branch }}</font>\\n>Build Status:<font color=\\\"warning\\\">Faiure</font>\\n>Platform:<font color=\\\"comment\\\">Android</font>\\n>Version:<font color=\\\"comment\\\">${{ github.event.inputs.buildVersionOrTag }}(${{ steps.variable.outputs.code }})</font>\\n>Changelog Url:<font color=\\\"comment\\\">[click this](${{ steps.variable.outputs.changelog_url }})</font>\\n>Download Url:<font color=\\\"comment\\\">[click this](https://www.pgyer.com/uoud)</font>\\n>When:<font color=\\\"comment\\\">${{ steps.variable.outputs.date }}</font>\", \"mentioned_list\":[\"@all\"]}}"
+          curl 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=${{ secrets.WECHAT_NOTIFICATION_KEY }}' -H 'Content-Type: application/json' -d "{\"msgtype\": \"markdown\",\"markdown\": {\"content\": \"Application daily build update:\\n>Project:<font color=\\\"warning\\\">${{ github.event.repository.name }}</font>\\n>Branch:<font color=\\\"warning\\\">${{ steps.variable.outputs.branch }}</font>\\n>Build Status:<font color=\\\"warning\\\">Faiure</font>\\n>Platform:<font color=\\\"warning\\\">iOS</font>\\n>Version:<font color=\\\"warning\\\">${{ github.event.inputs.buildVersionOrTag }}(${{ steps.variable.outputs.code }})</font>\\n>Changelog Url:<font color=\\\"comment\\\">[click this](${{ steps.variable.outputs.changelog_url }})</font>\\n>Download Url:<font color=\\\"comment\\\">[click this](https://www.pgyer.com/uoud)</font>\\n>When:<font color=\\\"warning\\\">${{ steps.variable.outputs.date }}</font>\", \"mentioned_list\":[\"@all\"]}}"
