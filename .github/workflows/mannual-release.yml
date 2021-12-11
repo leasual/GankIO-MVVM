@@ -144,9 +144,9 @@ jobs:
           echo "::set-output name=branch::${{ github.event.inputs.buildBranch }}"
 
       - name: Download build number
-          uses: actions/download-artifact@v2
-          with:
-            name: Info
+        uses: actions/download-artifact@v2
+        with:
+          name: Info
 
       - name: Get commit id and message
         id: lastest_commit
