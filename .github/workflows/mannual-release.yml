@@ -42,7 +42,7 @@ jobs:
           echo "::set-output name=info_plist_path::$plist_path"
           build_number=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" ${plist_path})
           build_number=$((${build_number} + 1))
-          build_number=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" ${plist_path})
+          build_version=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" ${plist_path})
           /usr/libexec/PlistBuddy -c "Set CFBundleShortVersionString ${{ github.event.inputs.buildVersionOrTag }}" ${plist_path}
           expr $build_number > buildNumber.txt
           build_number_path="${{ github.workspace }}/buildNumber.txt"
