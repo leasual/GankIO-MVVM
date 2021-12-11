@@ -173,7 +173,6 @@ jobs:
           lastest_commit_message="$(git log -1 --format=%B)"
           lastest_commit_id="$(git log -1 --format=%H)"
           init_commit_id="$(git rev-list --max-parents=0 HEAD)"
-          //这里有问题
           if [ ! -f release-last-commit.txt ]
           then
             touch release-last-commit.txt
