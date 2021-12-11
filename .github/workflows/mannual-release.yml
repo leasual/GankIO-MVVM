@@ -44,7 +44,6 @@ jobs:
           build_number=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" ${plist_path})
           build_number=$((${build_number} + 1))
           /usr/libexec/PlistBuddy -c "Set CFBundleVersion ${build_number}" ${plist_path}
-          expr $build_number > build-number.txt
 
       - name: Upload build number
         uses: actions/upload-artifact@v2
@@ -152,6 +151,7 @@ jobs:
         id: lastest_commit
         run: |
           ls -l
+          cat Info.plist
           mv Info.plist ${{ github.event.repository.name }}
           echo "name=${{ github.event.repository.name }}"
           echo "name=${{ github.event.repository.full_name }}"
