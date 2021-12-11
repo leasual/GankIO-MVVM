@@ -47,6 +47,7 @@ jobs:
           /usr/libexec/PlistBuddy -c "Set CFBundleVersion ${build_number}" ${plist_path}
           expr $build_number > buildNumber.txt
           build_number_path="${{ github.workspace }}/buildNumber.txt"
+          ls -l
 
       - name: Upload info plist and build number
         uses: actions/upload-artifact@v2
