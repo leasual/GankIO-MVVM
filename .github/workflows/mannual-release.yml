@@ -141,7 +141,13 @@ jobs:
           lastest_commit_message="$(git log -1 --format=%B)"
           lastest_commit_id="$(git log -1 --format=%H)"
           init_commit_id="$(git rev-list --max-parents=0 HEAD)"
-          last_commit_id="$(cat release-last-commit.txt)"
+          if [ ! -f release-last-commit.md ]
+          then
+            touch release-last-commit.md
+            last_commit_id=$init_commit_id
+          else
+            last_commit_id="$(cat release-last-commit.txt)"
+          fi
           echo "::set-output name=message::$lastest_commit_message"
           echo "::set-output name=id::$lastest_commit_id"
           echo "::set-output name=init_id::$init_commit_id"
