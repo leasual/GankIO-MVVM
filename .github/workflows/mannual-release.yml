@@ -57,9 +57,9 @@ jobs:
             ${{ steps.variable.outputs.info_plist_path }}
             ${{ steps.variable.outputs.build_number }}
 
-      # - name: Install pod
-      #   run: |
-      #     pod install --repo-update --clean-install
+      - name: Install pod
+        run: |
+          pod install --repo-update --clean-install
 
       # - name: Cache Cocoapods
       #   uses: actions/cache@v2
