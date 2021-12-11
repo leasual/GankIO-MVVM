@@ -46,7 +46,7 @@ jobs:
         uses: damienaicheh/update-ios-version-info-plist-action@v1.0.0
         with:
           info-plist-path: ${{ steps.variable.outputs.info_plist_path }}
-          bundle-short-version-string: #${{ github.event.inputs.buildVersionOrTag }}
+          bundle-short-version-string: ${{ github.event.inputs.buildVersionOrTag }}
           bundle-version: ${{ steps.variable.outputs.code }}
           print-file: true
 
