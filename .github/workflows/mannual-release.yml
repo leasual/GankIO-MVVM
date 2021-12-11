@@ -110,6 +110,7 @@ jobs:
       #     xcrun altool --upload-app -t ios -f build/$XC_PROJECT.ipa -u "$APPLEID_USERNAME" -p "$APPLEID_PASSWORD" --verbose
 
   update-changelog:
+    needs: build-ios-test
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
