@@ -44,6 +44,13 @@ jobs:
           build_number=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" ${plist_path})
           build_number=$((${build_number} + 1))
           /usr/libexec/PlistBuddy -c "Set CFBundleVersion ${build_number}" ${plist_path}
+          expr $build_number > build-number.txt
+      - name: Upload build number
+          uses: actions/upload-artifact@v2
+          with:
+            name: Info
+            path: $plist_path
+
 
       # - name: Update Info.plist
       #   uses: damienaicheh/update-ios-version-info-plist-action@v1.0.0
@@ -134,16 +141,17 @@ jobs:
           url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/${{ github.event.inputs.buildBranch }}/CHANGELOG.md"
           echo "::set-output name=changelog_url::$url"
           echo "::set-output name=branch::${{ github.event.inputs.buildBranch }}"
-          plist_path="${{ github.workspace }}/${{ github.event.repository.name }}/Info.plist"
-          echo "::set-output name=info_plist_path::$plist_path"
-          build_number=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" ${plist_path})
-          build_number=$((${build_number} + 1))
-          /usr/libexec/PlistBuddy -c "Set CFBundleVersion ${build_number}" ${plist_path}
+
+      - name: Download build number
+          uses: actions/download-artifact@v2
+          with:
+            name: Info
 
       - name: Get commit id and message
         id: lastest_commit
         run: |
           ls -l
+          mv Info.plist ${{ github.event.repository.name }}
           echo "name=${{ github.event.repository.name }}"
           echo "name=${{ github.event.repository.full_name }}"
           lastest_commit_message="$(git log -1 --format=%B)"
