@@ -169,7 +169,7 @@ jobs:
           default_author: github_actions
           branch: ${{ github.event.inputs.buildBranch }}
           add: 'CHANGELOG.md ${{ github.event.repository.name }}/Info.plist'
-          # tag: '${{ github.event.inputs.buildVersionOrTag }} --force'
+          tag: '${{ github.event.inputs.buildVersionOrTag }} --force'
 
       #{"msgtype": "markdown","markdown": {"content": "Application daily build update:\n>Project:<font color=\"comment\">Project</font>>Branch:<font color=\"comment\">Branch</font>>Build Status:<font color=\"warning\">Success</font>\n>Platform:<font color=\"comment\">Platform</font>\n>Version:<font color=\"comment\">Version</font>\n>Changelog Url:<font color=\"comment\">Changelog</font>\n>Download Url:<font color=\"comment\">Download</font>\n>When:<font color=\"comment\">When</font>", "mentioned_list":["@all"]}}
       - name: On success to send notification to wechat
