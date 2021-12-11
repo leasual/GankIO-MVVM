@@ -52,7 +52,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Info
-          path: 
+          path: |
             ${{ steps.variable.outputs.info_plist_path }}
             ${{ steps.variable.outputs.build_number_path }}
 
