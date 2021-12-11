@@ -159,7 +159,7 @@ jobs:
         uses: orhun/git-cliff-action@v1
         with:
           config: .github/cliff.toml
-          args: --unreleased --tag ${{ github.event.inputs.buildVersionOrTag }} --prepend CHANGELOG.md
+          args: --tag ${{ github.event.inputs.buildVersionOrTag }} --prepend CHANGELOG.md
         env:
           OUTPUT: CHANGELOG.md 
 
