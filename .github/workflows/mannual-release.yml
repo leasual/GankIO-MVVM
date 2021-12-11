@@ -50,7 +50,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Info
-          path: $plist_path
+          path: ${{ steps.variable.outputs.info_plist_path }}
 
 
       # - name: Update Info.plist
