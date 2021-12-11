@@ -152,16 +152,16 @@ jobs:
         run: |
           ls -l
           cat buildNumber.txt
-          
           build_number="$(cat buildNumber.txt)"
           echo "::set-output name=number::$build_number"
+          git tag ${{ github.event.inputs.buildVersionOrTag }}
       
       - name: Generate a changelog
         id: git-cliff
         uses: orhun/git-cliff-action@v1
         with:
           config: .github/cliff.toml
-          args: --latest --tag ${{ github.event.inputs.buildVersionOrTag }} --prepend CHANGELOG.md
+          args: --verbose --tag ${{ github.event.inputs.buildVersionOrTag }}
         env:
           OUTPUT: CHANGELOG.md 
 
