@@ -45,10 +45,8 @@ jobs:
           build_number=$((${build_number} + 1))
           echo "::set-output name=number::$build_number"
           /usr/libexec/PlistBuddy -c "Set CFBundleVersion ${build_number}" ${plist_path}
-
-      - name: Build number
-        run: |
-          expr ${{ steps.variable.outputs.number }} > buildNumber.txt
+          expr $build_number > buildNumber.txt
+          build_number_path="${{ github.workspace }}/buildNumber.txt"
 
       - name: Upload info plist and build number
         uses: actions/upload-artifact@v2
@@ -56,7 +54,7 @@ jobs:
           name: Info
           path: 
             ${{ steps.variable.outputs.info_plist_path }}
-            buildNumber.txt
+            ${{ steps.variable.outputs.build_number_path }}
 
       # - name: Update Info.plist
       #   uses: damienaicheh/update-ios-version-info-plist-action@v1.0.0
