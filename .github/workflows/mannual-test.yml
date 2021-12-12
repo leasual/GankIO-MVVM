@@ -75,9 +75,9 @@ jobs:
       #     bundle-version: ${{ steps.variable.outputs.code }}
       #     print-file: true
 
-      # - name: Install pod
-      #   run: |
-      #     pod install --repo-update --clean-install
+      - name: Install pod
+        run: |
+          pod install --repo-update --clean-install
 
       # - name: Cache Cocoapods
       #   uses: actions/cache@v2
