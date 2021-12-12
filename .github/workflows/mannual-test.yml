@@ -148,6 +148,7 @@ jobs:
           echo "::set-output name=changelog_url::$url"
           echo "::set-output name=branch::${GITHUB_REF##*/}"
           pre_tag=$(git describe --tags `git rev-list --tags --max-count=1`)
+          echo "$pre_tag"
           echo "::set-output name=tag::$pre_tag"
 
       - name: Download info plist
