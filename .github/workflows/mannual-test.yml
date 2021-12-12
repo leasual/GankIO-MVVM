@@ -23,7 +23,6 @@ env:
   APPLEID_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
   XC_PROJECT: "GankIO-MVVM"
   IOS_KEYS: ${{ secrets.IOS_KEYS }}
-  BRANCH: "develop"
 
 jobs:
   build-ios-test:
@@ -35,7 +34,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          ref: $BRANCH
+          ref: develop
 
       #build_number=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" ${plist_path})
       - name: Prepear variable for build
@@ -146,7 +145,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          ref: $BRANCH
+          ref: develop
 
       # git describe --abbrev=0 --tags, current branch
       # git describe --tags `git rev-list --tags --max-count=1`, all branch
