@@ -1,8 +1,9 @@
 name: iOS Test Build
 on:
-  schedule:
-    - cron: '5 * * * *'
-  # workflow_dispatch:
+  # schedule need on default branch can be executed
+  # schedule:
+  #   - cron: '5 * * * *'
+  workflow_dispatch:
     # inputs:
     #   buildBranch:
     #     description: 'Input which branch to build (develop/main/hotfix)'
@@ -34,20 +35,28 @@ jobs:
         with:
           fetch-depth: 0
 
+      #build_number=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" ${plist_path})
       - name: Prepear variable for build
         id: variable
         env:
           NUM: ${{ github.run_number }}
         run: |
+          if [ ! -f developer-build-number.txt ]
+          then
+            touch developer-build-number.txt
+            build_number=0
+          else
+            build_number="$(cat developer-build-number.txt)"
+          fi
           echo "::set-output name=code::$NUM"
           plist_path="${{ github.workspace }}/${{ github.event.repository.name }}/Info.plist"
           echo "::set-output name=info_plist_path::$plist_path"
-          build_number=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" ${plist_path})
+          
           build_number=$((${build_number} + 1))
           echo "::set-output name=number::$build_number"
           /usr/libexec/PlistBuddy -c "Set CFBundleVersion ${build_number}" ${plist_path}
-          expr $build_number > buildNumber.txt
-          build_number_path="${{ github.workspace }}/buildNumber.txt"
+          expr $build_number > developer-build-number.txt
+          build_number_path="${{ github.workspace }}/developer-build-number.txt"
           echo "::set-output name=build_number::$build_number_path"
           ls -l
 
@@ -56,7 +65,6 @@ jobs:
         with:
           name: Info
           path: |
-            ${{ steps.variable.outputs.info_plist_path }}
             ${{ steps.variable.outputs.build_number }}
  
       # - name: Update Info.plist
@@ -146,7 +154,7 @@ jobs:
         run: |
           echo "::set-output name=code::$NUM"
           echo "::set-output name=date::$(date +'%Y-%m-%dT%H:%M')"
-          url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/${GITHUB_REF##*/}/CHANGELOG.md"
+          url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/${GITHUB_REF##*/}/CHANGELOG_DEV.md"
           echo "::set-output name=changelog_url::$url"
           echo "::set-output name=branch::${GITHUB_REF##*/}"
           pre_tag_param=$(git describe --tags `git rev-list --tags --max-count=1`)
@@ -162,7 +170,7 @@ jobs:
         id: lastest_commit
         run: |
           ls -l
-          cat buildNumber.txt
+          cat developer-build-number.txt
           echo "name=${{ github.event.repository.name }}"
           echo "name=${{ github.event.repository.full_name }}"
           lastest_commit_message="$(git log -1 --format=%B)"
@@ -179,16 +187,16 @@ jobs:
           echo "::set-output name=id::$lastest_commit_id"
           echo "::set-output name=init_id::$init_commit_id"
           echo "::set-output name=last_id::$last_commit_id"
-          build_number="$(cat buildNumber.txt)"
+          build_number="$(cat developer-build-number.txt)"
           echo "::set-output name=number::$build_number"
       - shell: bash
         run: |
           echo "${{ steps.lastest_commit.outputs.id }}"
           expr ${{ steps.lastest_commit.outputs.id }} > release-last-commit.txt
       - name: Backup changelog
-        if: hashFiles('CHANGELOG.md') != ''
+        if: hashFiles('CHANGELOG_DEV.md') != ''
         run: |
-          mv CHANGELOG.md CHANGELOG_backup.md
+          mv CHANGELOG_DEV.md CHANGELOG_backup.md
       - name: Generate a changelog without header and footer
         if: hashFiles('CHANGELOG_backup.md') != ''
         uses: orhun/git-cliff-action@v1
@@ -203,24 +211,24 @@ jobs:
         run: |
           sed '3r CHANGELOG_commit.md' CHANGELOG_backup.md > CHANGELOG_lastest.md
           rm CHANGELOG_backup.md CHANGELOG_commit.md
-          mv CHANGELOG_lastest.md CHANGELOG.md
+          mv CHANGELOG_lastest.md CHANGELOG_DEV.md
           echo "$(cat CHANGELOG.md)"
       
       - name: Generate a changelog with header and footer
-        if: hashFiles('CHANGELOG.md') == ''
+        if: hashFiles('CHANGELOG_DEV.md') == ''
         uses: orhun/git-cliff-action@v1
         with:
           config: .github/cliff.toml
           args: --verbose ${{ steps.lastest_commit.outputs.last_id }}..HEAD --tag ${{ steps.variable.outputs.pre_tag }}(${{ steps.lastest_commit.outputs.number }})-beta
         env:
-          OUTPUT: CHANGELOG.md 
+          OUTPUT: CHANGELOG_DEV.md 
 
       - uses: EndBug/add-and-commit@v7
         with:
           message: "ci: update changelog to ${{ steps.variable.outputs.pre_tag }}(${{ steps.lastest_commit.outputs.number }})-beta"
           default_author: github_actions
           branch: ${{ github.variable.outputs.branch }}
-          add: 'release-last-commit.txt CHANGELOG.md ${{ github.event.repository.name }}/Info.plist'
+          add: 'release-last-commit.txt CHANGELOG_DEV.md developer-build-number.txt'
           
 
       #{"msgtype": "markdown","markdown": {"content": "Application daily build update:\n>Project:<font color=\"comment\">Project</font>>Branch:<font color=\"comment\">Branch</font>>Build Status:<font color=\"warning\">Success</font>\n>Platform:<font color=\"comment\">Platform</font>\n>Version:<font color=\"comment\">Version</font>\n>Changelog Url:<font color=\"comment\">Changelog</font>\n>Download Url:<font color=\"comment\">Download</font>\n>When:<font color=\"comment\">When</font>", "mentioned_list":["@all"]}}
