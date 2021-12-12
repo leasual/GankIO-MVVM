@@ -197,7 +197,7 @@ jobs:
           echo "::set-output name=last_id::$last_commit_id"
           build_number="$(cat release-build-number.txt)"
           echo "::set-output name=number::$build_number"
-          build_version="$(cat release-build-versuon.txt)"
+          build_version="$(cat release-build-version.txt)"
           echo "::set-output name=version::$build_version"
       - shell: bash
         run: |
