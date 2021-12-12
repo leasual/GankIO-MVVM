@@ -1,11 +1,11 @@
 name: iOS Test Build
 on:
   workflow_dispatch:
-    inputs:
-      buildBranch:
-        description: 'Input which branch to build (develop/main/hotfix)'
-        required: true
-        default: 'main'
+    # inputs:
+    #   buildBranch:
+    #     description: 'Input which branch to build (develop/main/hotfix)'
+    #     required: true
+    #     default: 'main'
       # buildVersionOrTag:
       #   description: 'Specify version only when you want to increment the minor and major version (e.g. 1.0.0)'
       #   required: true
@@ -31,7 +31,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          ref: ${{ github.event.inputs.buildBranch }}
 
       - name: Prepear variable for build
         id: variable
@@ -135,7 +134,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          ref: ${{ github.event.inputs.buildBranch }}
 
       - name: Prepear variable for changelog
         id: variable
@@ -144,19 +142,14 @@ jobs:
         run: |
           echo "::set-output name=code::$NUM"
           echo "::set-output name=date::$(date +'%Y-%m-%dT%H:%M')"
-          url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/${{ github.event.inputs.buildBranch }}/CHANGELOG.md"
+          url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/${GITHUB_REF##*/}/CHANGELOG.md"
           echo "::set-output name=changelog_url::$url"
-          echo "::set-output name=branch::${{ github.event.inputs.buildBranch }}"
+          echo "::set-output name=branch::${GITHUB_REF##*/}"
 
       - name: Download info plist
         uses: actions/download-artifact@v2
         with:
           name: Info
-      
-      # - name: Download build number
-      #   uses: actions/download-artifact@v2
-      #   with:
-      #     name: BuildNumber
 
       - name: Get commit id and message
         id: lastest_commit
@@ -219,7 +212,7 @@ jobs:
         with:
           message: "ci: update changelog to ${{ github.event.inputs.buildVersionOrTag }}(${{ steps.lastest_commit.outputs.number }})-beta"
           default_author: github_actions
-          branch: ${{ github.event.inputs.buildBranch }}
+          branch: ${GITHUB_REF##*/}
           add: 'release-last-commit.txt CHANGELOG.md ${{ github.event.repository.name }}/Info.plist'
           # tag: '${{ github.event.inputs.buildVersionOrTag }} --force'
 
