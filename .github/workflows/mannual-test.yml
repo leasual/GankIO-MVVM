@@ -51,7 +51,8 @@ jobs:
             build_number="$(cat release-build-number.txt)"
           fi
           echo "::set-output name=code::$NUM"
-          plist_path="${{ github.workspace }}/${{ github.event.repository.name }}Info.plist"
+          echo "${{ github.event.repository.name }}"
+          plist_path="${{ github.workspace }}/$XC_PROJECT/Info.plist"
           echo "::set-output name=info_plist_path::$plist_path"
           
           build_number=$((${build_number} + 1))
