@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [1.0.5] - 2021-12-11
+## ['v1.0.7'] - 2021-12-12
 
 ### Bug Fixes
 
@@ -56,6 +56,8 @@ All notable changes to this project will be documented in this file.
 - Changelog error.
 - Changelog error.
 - Changlog error.
+- Changelog error.
+- Tag should prefix v.
 
 ### Documentation
 
