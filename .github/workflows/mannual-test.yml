@@ -1,9 +1,9 @@
 name: iOS Test Build
 on:
-  # schedule need on default branch can be executed
-  # schedule:
-  #   - cron: '5 * * * *'
-  workflow_dispatch:
+  schedule need on default branch can be executed
+  schedule:
+    - cron: '10 * * * *'
+  # workflow_dispatch:
     # inputs:
     #   buildBranch:
     #     description: 'Input which branch to build (develop/main/hotfix)'
