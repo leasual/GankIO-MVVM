@@ -23,6 +23,7 @@ env:
   APPLEID_PASSWORD: ${{ secrets.APPLE_PASSWORD }}
   XC_PROJECT: "GankIO-MVVM"
   IOS_KEYS: ${{ secrets.IOS_KEYS }}
+  BRANCH: "develop"
 
 jobs:
   build-ios-test:
@@ -34,6 +35,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+          ref: $BRANCH
 
       #build_number=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" ${plist_path})
       - name: Prepear variable for build
@@ -75,64 +77,64 @@ jobs:
       #     bundle-version: ${{ steps.variable.outputs.code }}
       #     print-file: true
 
-      - name: Install pod
-        run: |
-          pod install --repo-update --clean-install
+      # - name: Install pod
+      #   run: |
+      #     pod install --repo-update --clean-install
 
-      - name: Cache Cocoapods
-        uses: actions/cache@v2
-        with:
-          path: Pods
-          key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-pods-
+      # - name: Cache Cocoapods
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: Pods
+      #     key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+      #     restore-keys: |
+      #       ${{ runner.os }}-pods-
       
-      - name: Install gpg
-        run: |
-          brew install gnupg
+      # - name: Install gpg
+      #   run: |
+      #     brew install gnupg
 
-      - name: Setup provisioning profile
-        run: |
-          gpg --quiet --batch --yes --decrypt --passphrase="$IOS_KEYS" --output .github/secrets/gank.mobileprovision .github/secrets/gank.mobileprovision.gpg
-          gpg --quiet --batch --yes --decrypt --passphrase="$IOS_KEYS" --output .github/secrets/gank.p12 .github/secrets/gank.p12.gpg
-          ls -l
-          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+      # - name: Setup provisioning profile
+      #   run: |
+      #     gpg --quiet --batch --yes --decrypt --passphrase="$IOS_KEYS" --output .github/secrets/gank.mobileprovision .github/secrets/gank.mobileprovision.gpg
+      #     gpg --quiet --batch --yes --decrypt --passphrase="$IOS_KEYS" --output .github/secrets/gank.p12 .github/secrets/gank.p12.gpg
+      #     ls -l
+      #     mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
 
-          cp .github/secrets/gank.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/dan_release.mobileprovision
+      #     cp .github/secrets/gank.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/dan_release.mobileprovision
 
 
-          security create-keychain -p "123456" build.keychain
-          security import .github/secrets/gank.p12 -t agg -k ~/Library/Keychains/build.keychain -P "123456" -A
+      #     security create-keychain -p "123456" build.keychain
+      #     security import .github/secrets/gank.p12 -t agg -k ~/Library/Keychains/build.keychain -P "123456" -A
 
-          security list-keychains -s ~/Library/Keychains/build.keychain
-          security default-keychain -s ~/Library/Keychains/build.keychain
-          security unlock-keychain -p "" ~/Library/Keychains/build.keychain
+      #     security list-keychains -s ~/Library/Keychains/build.keychain
+      #     security default-keychain -s ~/Library/Keychains/build.keychain
+      #     security unlock-keychain -p "" ~/Library/Keychains/build.keychain
 
-          security set-key-partition-list -S apple-tool:,apple: -s -k "123456" ~/Library/Keychains/build.keychain
+      #     security set-key-partition-list -S apple-tool:,apple: -s -k "123456" ~/Library/Keychains/build.keychain
 
-      - name: Archive App
-        run: |
-          ls -l
-          xcodebuild -workspace $XC_PROJECT.xcworkspace \
-            -scheme $XC_PROJECT \
-            -sdk iphoneos \
-            -configuration AppStoreDistribution \
-            -archivePath $PWD/build/$XC_PROJECT.xcarchive \
-            clean archive | xcpretty
+      # - name: Archive App
+      #   run: |
+      #     ls -l
+      #     xcodebuild -workspace $XC_PROJECT.xcworkspace \
+      #       -scheme $XC_PROJECT \
+      #       -sdk iphoneos \
+      #       -configuration AppStoreDistribution \
+      #       -archivePath $PWD/build/$XC_PROJECT.xcarchive \
+      #       clean archive | xcpretty
 
-      #/usr/bin/xcodebuild -exportArchive -archivePath "$ARCHIVE_PATH" -exportOptionsPlist "$SRCROOT/ExportOptions.plist" -exportPath "$EXPORT_PATH"
-      - name: Export IPA
-        run: |
-          xcodebuild -archivePath $PWD/build/$XC_PROJECT.xcarchive \
-            -exportOptionsPlist ExportOptions.plist \
-            -exportPath $PWD/build \
-            -allowProvisioningUpdates \
-            -exportArchive | xcpretty
+      # #/usr/bin/xcodebuild -exportArchive -archivePath "$ARCHIVE_PATH" -exportOptionsPlist "$SRCROOT/ExportOptions.plist" -exportPath "$EXPORT_PATH"
+      # - name: Export IPA
+      #   run: |
+      #     xcodebuild -archivePath $PWD/build/$XC_PROJECT.xcarchive \
+      #       -exportOptionsPlist ExportOptions.plist \
+      #       -exportPath $PWD/build \
+      #       -allowProvisioningUpdates \
+      #       -exportArchive | xcpretty
 
-      - name: Publish To TestFlight
-        if: success()
-        run: |
-          xcrun altool --upload-app -t ios -f build/$XC_PROJECT.ipa -u "$APPLEID_USERNAME" -p "$APPLEID_PASSWORD" --verbose
+      # - name: Publish To TestFlight
+      #   if: success()
+      #   run: |
+      #     xcrun altool --upload-app -t ios -f build/$XC_PROJECT.ipa -u "$APPLEID_USERNAME" -p "$APPLEID_PASSWORD" --verbose
 
   update-changelog:
     needs: build-ios-test
@@ -144,6 +146,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+          ref: $BRANCH
 
       # git describe --abbrev=0 --tags, current branch
       # git describe --tags `git rev-list --tags --max-count=1`, all branch
