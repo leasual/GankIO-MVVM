@@ -1,7 +1,13 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## ['v1.0.7'] - 2021-12-12
+## [1.0.8] - 2021-12-12
+
+### Bug Fixes
+
+- Tag error.
+
+## [1.0.7] - 2021-12-12
 
 ### Bug Fixes
 
