@@ -1,6 +1,6 @@
 name: iOS Test Build
 on:
-  schedule need on default branch can be executed
+  # schedule need on default branch can be executed
   schedule:
     - cron: '10 * * * *'
   # workflow_dispatch:
